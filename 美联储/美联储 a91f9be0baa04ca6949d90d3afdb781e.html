@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>美联储</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a91f9be0-baa0-4ca6-949d-90d3afdb781e" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏦</span></div><h1 class="page-title"><strong>美联储</strong></h1><p class="page-description"></p></header><div class="page-body"><nav id="f4d5809a-aa54-4c15-b2b3-560fe511cb48" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f7b24a12-e3e6-4ef1-b500-92113ba39f7d"><strong>美联储简介引言</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#df3d9dec-9a2b-4584-bf17-e40050b05daa">美联储历史</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ce56ad73-adb5-488e-9896-81e4361dd0f0">美联储的组织架构</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#668b1247-7d01-4b99-8c0a-6e670122af0e">美联储货币政策架构</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0746d614-869a-49d3-b9ac-960854b71b48">美联储的货币政策框架-工具</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#32ba4b36-6f19-4aa1-9bc5-c66fe16245a9">美联储的资产负债表</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#092528e0-15cb-44d2-afbe-739f5f3ac138">美联储的货币政策传导</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d7f17c73-155c-4448-b93d-235b1373b1f7">美联储的数据与研究来源</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a8f184be-fc47-4370-a41a-cbec110f7e3f">美联储议息会议</a></div></nav><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>美联储简介引言</strong></summary><div class="indented"><p id="60449816-8d21-43b8-a0da-c44a89ab7df9" class=""><strong><mark class="highlight-red">美联储的法定目标：</mark></strong></p><ul id="414b22e6-fef7-464f-b307-6151e6447717" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">实现充分就业</mark></strong></li></ul><ul id="ea7cff28-4259-4b60-afcb-e737b4f158b1" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red">保持物价稳定</mark></strong></li></ul><p id="12a4c358-7dc3-403d-bd4c-a7259cf90aaa" class="">
+</p><p id="bc6f0fc0-eb27-4e61-a02b-355ea473f0c6" class=""><strong>美联储和日常生活与金融市场的联系</strong></p><ul id="6998d6b6-c973-40af-bfef-bd646b0caf6a" class="bulleted-list"><li style="list-style-type:disc"><strong>货币政策</strong><ul id="2a23605f-9f87-4b31-9f1c-93adf838a569" class="bulleted-list"><li style="list-style-type:circle"><strong>实体经济</strong></li></ul><ul id="c0099a82-d849-4b5d-9456-9dd3b7d4c8b5" class="bulleted-list"><li style="list-style-type:circle"><strong>金融市场</strong></li></ul></li></ul><p id="d805f805-f302-4ea1-afad-bee72a4244e5" class="">
+</p><p id="99311357-56f8-4a12-bed3-9f15c7cc8b13" class=""><strong>资产全球化新时代</strong><div class="indented"><ul id="a23425f1-f48f-43a1-845b-0a731901ec01" class="bulleted-list"><li style="list-style-type:disc"><strong>美元是最为庞大，表现最为亮眼的资产</strong><ul id="b2ea94ae-b008-4469-9e3b-5649d6a2be8a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray"><em>由此美联储会对全球资产的走势造成深远影响</em></mark></li></ul></li></ul><ul id="ec781819-1363-4ae5-bf16-1fe2dabb9a6d" class="bulleted-list"><li style="list-style-type:disc"><strong>A股市场有“美股映射”</strong><ul id="fe3403d6-32d8-43e6-a97f-ca867794bac3" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray"><em>A股市场的美股映射是指中国A股市场中的一种金融产品，其目的是为中国投资者提供对美国股市的投资机会。这种映射通常通过基金、指数、交易所交易基金（ETF）等方式实现。</em></mark></li></ul></li></ul><ul id="2c9f3141-fbef-40ee-9480-e0d466d379ce" class="bulleted-list"><li style="list-style-type:disc"><strong>美股市场有“中概股”</strong><ul id="3ee8fe79-a88d-4586-ab5b-038591d8adfa" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray"><em>“中概股”是指在海外上市交易所（如美国纳斯达克、纽约证券交易所等）上市的中国公司股票。这些公司通常在中国大陆成立，但选择在海外上市，以吸引国际投资者并融资，同时也能获得更大的曝光度和更高的估值。</em></mark></li></ul><ul id="a95519ce-5ddb-4a1d-90fd-8c30eaa76b4d" class="bulleted-list"><li style="list-style-type:circle"><em><mark class="highlight-gray">&quot;中概股&quot;（中国概念股）一词来源于“中国概念”（China Concept），意指这些公司在商业和经济活动中与中国有关。这些公司经营各种不同的业务，包括科技、互联网、金融、零售、制造等领域。许多知名的科技巨头和初创企业都在海外上市，成为了“中概股”的代表，比如阿里巴巴、腾讯、百度、京东等。</mark></em></li></ul></li></ul><ul id="5163a6aa-78a5-49f9-9eba-d56c4706cc05" class="bulleted-list"><li style="list-style-type:disc"><strong>中国的房地产企业在美国发行大量美元记债的债券</strong></li></ul><ul id="0bbc75da-1c05-43b2-96f0-9304d19afe6e" class="bulleted-list"><li style="list-style-type:disc"><strong>中国央行的资产端有数量庞大，超过3万亿美元的外汇储备</strong></li></ul><ul id="c4c36368-3d9c-4974-9a0f-d3c4d535ad42" class="bulleted-list"><li style="list-style-type:disc"><strong>全世界大量国家持有美元外汇储备</strong></li></ul></div></p><p id="ef2bd77f-be67-4c4d-8b18-f8195384a7db" class="">
+</p><p id="a51eb7e1-66bd-4613-a817-ba5cb588eea3" class=""><strong>对美联储的了解脉络将会按照下图进行：</strong></p><figure id="dc43e20c-68de-4b24-b210-7b7158eb5b37" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled.png"><img style="width:2752px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled.png"/></a></figure><p id="6ecb5737-a104-40e8-a912-5fce8f5ba754" class="">
+</p><h2 id="6a0902f8-c629-4aae-83ac-6a26747041b9" class=""><strong>美联储发展简史</strong></h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>美元发展简史</strong></summary><div class="indented"><figure id="56eead93-a9ed-401e-864f-af7b16f64253" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%201.png"><img style="width:2731px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%201.png"/></a></figure><p id="664ffc42-8149-465f-90b1-b01186cbc371" class="">一个很棒的知乎blog：</p><figure id="169b5e34-efe3-4fec-9b00-61472b50f902"><a href="https://zhuanlan.zhihu.com/p/138885222" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">从金本位制、布雷顿森林体系到石油美元体系，看美国如何收割世界的财富</div><div class="bookmark-description">文章转自力场作者：大白高国 在今年的疫情影响之下，美国经济也陷入了低迷，仅在今年美股就发生了四次溶断，失业人数大增，过去六周人数达到3000万人。为求自保，美国利用美元的霸权地位，开启了疯狂印钞模式，大…</div></div><div class="bookmark-href"><img src="https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.81060cab.png" class="icon bookmark-icon"/>https://zhuanlan.zhihu.com/p/138885222</div></div></a></figure><p id="b291bb36-f0ae-40f5-a022-6751eee36803" class="">做一些摘要在这里：</p><ul id="0974c8c8-7e78-4d35-bf75-0be37d52136f" class="toggle"><li><details open=""><summary><mark class="highlight-purple"><strong>金本位体系</strong></mark></summary><ul id="14ec46af-8513-49e6-8416-e6ffc28f77b9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>金本位简单来说，就是以黄金为信用货币，它与黄金一比一锚定成信用货币。金本位制度下，你有多少的黄金，就会发行多少的信用货币。</strong></mark></li></ul><ul id="446db9e7-5822-4f0f-a835-55fd0fc1359a" class="bulleted-list"><li style="list-style-type:disc">金本位制最大的优点就是它<strong>不会出现通货膨胀</strong>，缺点在于黄金的总量恒定，在战争及经济通缩期间<strong>无法满足社会的发展需求</strong>。</li></ul><ul id="9446fc08-1e4a-4711-a0d3-b38fda6473d3" class="bulleted-list"><li style="list-style-type:disc">经过第一次世界大战之后，金本位制发展受到了很大的影响。由于战争的影响，导致国际金本位制无法统一，各国纷纷发行不兑现的纸币，并规定禁止让黄金流出国内，这就导致了金本位制无法实现。美国总统林肯在那个时期就发行了，国家的信用币林肯绿券，来代替银行债券流通。</li></ul><ul id="22ffdc76-9418-41be-acf0-e1929055ceac" class="bulleted-list"><li style="list-style-type:disc">20世纪初美联储成立，开了印钞模式，在成立的第一年，美国政府就欠美联储10亿美元。各国发行的纸币远远超过了黄金的储备，就是说按纸币的一比一兑换成黄金来说，已无法实现。<strong><mark class="highlight-brown">1944年罗斯福上台之后，停止美元兑换黄金，禁止美国公民私藏黄金，将全球的大部分黄金留在了美国。</mark></strong></li></ul></details></li></ul><ul id="63cb554a-4b2b-4a01-9dd5-3405a2ba1b14" class="toggle"><li><details open=""><summary><mark class="highlight-purple"><strong>布雷顿森林体系</strong></mark></summary><ul id="6bd9b239-c49e-49af-b683-a91ec3006350" class="bulleted-list"><li style="list-style-type:disc"><strong>布雷顿森林体系成立于1944年7月</strong>，44个国家的代表在美国新罕布什尔州“布雷顿森林公园”召开联合国和盟国货币金融会议，正式确立了以美元为中心的国际货币体系，美元的霸主地位行以确定。</li></ul><ul id="d1841cbf-bd34-4e22-b7e2-9d8e25850474" class="bulleted-list"><li style="list-style-type:disc"><strong>美国国内不流通黄金，实现了美元与黄金挂钩，弱化黄金的货币属性</strong>，你要兑换黄金必须先换成美元才行。这就导致美元的国际地位迅速攀升，加之当时美国在经济、军事领域取得了成就显著，所以美元成为了其它各国的主要储备资产。</li></ul><ul id="f71d3638-50cf-4562-bb08-ce3a189049eb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><span style="border-bottom:0.05em solid"><em>布雷顿森林体系有一个致命的弱点就是美元可以超发，而黄金总量恒定，到1971年美元的发行量已经超过了黄金储备的4倍，布雷顿森林体系也面临着瓦解。</em></span></mark></li></ul><ul id="7ac11d74-d4b4-410b-8a42-8505dfa02d3e" class="bulleted-list"><li style="list-style-type:disc">1971年，美国终于撑不住了，各国开始抛售美元，美国无法用美元来兑换黄金。美国总统尼克松在8月15日宣布实行“新经济政策”，停止履行外国政府或中央银行可用美元向美国兑换黄金的义务。1973年3月布雷顿森林体系正式失去作用。</li></ul><ul id="0f1b68a7-5a77-4120-b6b1-a2f9ef62af79" class="bulleted-list"><li style="list-style-type:disc">直到1976年，随着牙买加协议的签订，浮动汇率合法化，黄金官价取消。至此，黄金的货币属性在全球被废除，金全位制度完全消失，全世界第一次进入法币时代。</li></ul></details></li></ul><ul id="44b2fcb9-1cbe-4fae-a593-3de2456215c7" class="toggle"><li><details open=""><summary><mark class="highlight-purple"><strong>石油美元体系</strong></mark></summary><ul id="7b106957-dc01-4040-91f5-14a4b03e4893" class="bulleted-list"><li style="list-style-type:disc">1971年，美国宣布停止美元兑换黄金后，各石油输出国停止了对美国石油的出口，使得美国经济陷入的低迷。美国深刻的认识到了石油对经济的重要性。由于沙特是欧佩克中最大的产油国和全球最大的石油出口国，美国宣布对其进行保护和经济援助，条件是沙特所有的石油交易都要用美元结算。由于沙特是OPEC中最大的产油国和全球最大的石油出口国，其他国家也很快采用<strong>美元进行石油交易</strong>，石油美元体系从此确立。</li></ul><ul id="c0194883-949b-410b-aa4d-e7b2164ec685" class="bulleted-list"><li style="list-style-type:disc">事实上，美国用美元买入石油后，又通过对沙特等基建工程，使得部分美元回流。沙特等也不会把所有美元兑换成本国货币，那会形成本国的通货膨胀。所以沙特等欧佩克成员有会把部分美元投向美国金融市场，这也使得美元回流加速。</li></ul><ul id="075faf0f-e5c2-43d9-b723-f6c88fad6176" class="bulleted-list"><li style="list-style-type:disc">石油涨价，美元需求增多，美国加紧印钱，用来购买世界各国辛辛苦苦生产的商品，接着世界花美元买石油，美元多了怎么办？不要怕，这么可靠的货币，欢迎购买美国国债。美国不断的发行国债，美联储则不断的加紧印钞。至2019年美国的债务已高达23.3万亿，而市场上的纸币越来越多，各国购买的美国国债则会严重通胀，美国通过增发美元来实现对世界的收割，形成美元的贬值，手里的钱就会缩水。</li></ul></details></li></ul><p id="27b0b9ae-6c47-44b6-8c4b-2af8ceeebfc5" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>美联储重要人物简介</strong></summary><div class="indented"><figure id="d6dd0e88-7d37-4d0b-856d-c54c85ea57c7" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%202.png"><img style="width:2689px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%202.png"/></a></figure><ul id="7f0dfe40-5a13-4193-a87e-dd189b6f7b41" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>沃尔克</strong></mark><ul id="ceeef3bd-14ae-4650-9675-15649cba7e46" class="bulleted-list"><li style="list-style-type:circle">战胜“大通胀”</li></ul><ul id="f5ab60b0-6bca-4597-8252-422bdceb9ae2" class="bulleted-list"><li style="list-style-type:circle">坚定的高利率政策，扭转了通胀，让人们开始重新信任美联储</li></ul></li></ul><ul id="a768df03-4650-4ae4-9445-ba297ad220a6" class="bulleted-list"><li style="list-style-type:disc"><strong>格林斯潘</strong><ul id="bf4e01c2-d0e0-456b-a6b6-eb646a0f8462" class="bulleted-list"><li style="list-style-type:circle">通胀之后的“持续缓和增长”时代的掌舵人</li></ul><ul id="8f72b042-a840-44cb-8152-9b8300748ad3" class="bulleted-list"><li style="list-style-type:circle">“如果你以为你已经对我了如指掌，那你一定误解了我的话”</li></ul></li></ul><ul id="b1c52002-dc92-471b-b819-1fb3ea545be0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>伯南克</strong></mark><ul id="93c08c81-962a-4de6-bf08-7573fb88f251" class="bulleted-list"><li style="list-style-type:circle">08年金融危机抵御者</li></ul><ul id="4d2daaad-4b74-41ac-8cc1-8ad3e9c9ad85" class="bulleted-list"><li style="list-style-type:circle">创新性货币政策帮助市场恢复稳定</li></ul></li></ul><ul id="025ef035-a3fb-45f2-83a1-85703172ded9" class="bulleted-list"><li style="list-style-type:disc"><strong>耶伦</strong><ul id="c0edcd5a-8c8f-48d2-887e-5ec6f13367e0" class="bulleted-list"><li style="list-style-type:circle">开启了直至今日的加息</li></ul><ul id="7d1afa46-cffd-4078-bc28-58487f5cd209" class="bulleted-list"><li style="list-style-type:circle">雷厉风行</li></ul></li></ul><ul id="b7c70ef1-76af-44c2-a1a4-ceab0d781325" class="bulleted-list"><li style="list-style-type:disc"><strong>鲍威尔</strong></li></ul><p id="c72d0298-47f7-4aae-aff0-3b52554a52a6" class="">
+</p><p id="08577147-9d84-4117-8e12-7675a214256f" class=""><strong>鹰派——强调纪律</strong></p><p id="4007aa89-fd0d-464d-8cf7-08468861caaa" class=""><strong>鸽派——强调灵活</strong></p><p id="c530c274-dd11-450b-b9d9-4cc31475f45e" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储历史</summary><div class="indented"><ul id="012e4152-1d03-418a-9350-de9d040348e5" class="toggle"><li><details open=""><summary><mark class="highlight-yellow"><em>关键的时间节点：</em></mark></summary><ul id="ddce7197-1dcf-4608-bee3-5f6c4272bbe0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>1942年——美联储可以依法持有国债</em></mark></li></ul><ul id="38962ad6-edb4-41ac-b936-db371ed3f590" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>1951年——美联储财政部协定</em></mark></li></ul><ul id="4d936f6e-1beb-4684-b2bb-53fb1c7621bd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>1977年——美联储改革法</em></mark></li></ul><ul id="f0984453-f123-48fc-aa6d-df1d5e7bb3ad" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>2008年——金融危机</em></mark></li></ul></details></li></ul><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1942年——美联储可依法持有美国国债</summary><div class="indented"><figure id="f5752f1a-639e-4f2b-a0c1-f18ef0dae9ae" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%203.png"><img style="width:624px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%203.png"/></a></figure><p id="063c5376-aa6b-4064-a59f-4dd85faeca5c" class="">1942年<mark class="highlight-orange"><strong>Bills大量买入</strong></mark>，中长期国债也开始持有</p><p id="a06b99f5-238e-4d36-9e2d-23dc0939c822" class=""><strong>当时买入是为了压低短期利率，也就是无风险利率。这样市场的融资难度降低，流动性增强</strong></p><figure id="9b2b2b6c-43d2-45ed-ba7a-1605b404be94" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%204.png"><img style="width:576px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%204.png"/></a></figure><p id="998a0dd1-8884-49dd-bd4b-acc0d67f704b" class="">当1942年美联储被允许持有国债之后，3年内：黄金占比锐减到50%，国债飙升到50%</p><ul id="16a9e26d-d282-4b1a-8b92-33a92a75a02a" class="bulleted-list"><li style="list-style-type:disc">黄金和国债的接棒，宣布了金本位的结束</li></ul><ul id="a459a307-f283-4956-914b-dadba1cd1bb3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>当时的时代背景是二战，政府通过发债去融资，政府会担心长期的利率负担过高。美联储通过购买国债的方式，去支持美联储的财政。这样美国政府的融资成本比较低。</strong></mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1951年——美联储财政部协定</summary><div class="indented"><p id="350dfe07-8089-4e16-a27c-5937f45b64cb" class="">1951年，美联储和财政部达成了“美联储-财政部”协定，解放了货币政策给美联储，为现代美联储奠定了基础（不受到fiscal policy的要挟，<mark class="highlight-red"><span style="border-bottom:0.05em solid"><strong>确定了美联储货币政策的独立性</strong></span></mark>）</p><p id="6b3811c0-f416-4c98-b53d-cf4251067106" class="">
+</p><figure id="7ecd9b3e-b187-4069-b36e-ff4e26662725" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%205.png"><img style="width:576px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%205.png"/></a></figure><p id="f4d21a88-5b9e-4d6d-9023-0eb0a081418a" class="">明明美联储获得了货币政策的独立性，但是从上图来看，到1980年依然是高通胀+高失业率，这是为什么？</p><p id="134f9f20-d2f2-4d95-87f7-999a256b9e26" class=""><strong>Ans：因为美联储依然从属于政治</strong></p><figure id="2e22e1c4-af39-4fcf-bb9a-e57d54a718e8" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%206.png"><img style="width:2595px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%206.png"/></a></figure><p id="b3159e3d-993f-441d-bf49-592c943545e9" class="">1965年以后，<strong>美联储主席马丁（左图）想要提高利率抑制通胀，但是遭受到了时任美国总统林登约翰逊的阻挠</strong>。</p><p id="9fc1774d-dec0-4473-afdf-b862c9fd72c4" class="">右图是<strong>亚瑟伯恩斯</strong>，联储历史上最糟糕的主席。在任期间通胀非常高，但是无所作为。伯恩斯受到尼克松的压力，一直没有加息（<strong>1970-1978</strong>）</p><p id="b93f8ce7-b72d-408b-9a5c-c71756d9f79a" class="">
+</p><p id="b49220ed-a83a-40f2-9ead-d074d1ebeb7e" class=""><mark class="highlight-teal"><strong>所以美联储脱离了财政部的魔爪，但是没有脱离政治的魔爪</strong></mark></p><p id="d3697c35-6e39-4ccd-b5ce-eea3405fbde7" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1977年——美联储改革法</summary><div class="indented"><p id="9fe7770b-c276-482f-b75d-f76ee7bb8f6b" class="">改革法案明确了美联储的目标，增加了美联储对国会的透明度和问责制。70年代的高通胀高失业（滞胀），导致1977年颁布了美联储改革，把下面两点要求写进了法案：</p><ul id="467ed7ae-dfd1-4463-9328-894a3fcf5933" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>物价稳定</strong></mark></li></ul><ul id="4b65f694-63a1-4208-94fd-0cc8e4937f65" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>充分就业</strong></mark></li></ul><p id="04ed7e65-3483-4227-a32e-7f942ae8a721" class="">有了真正的货币政策独立性和非常清晰的货币政策目标</p><figure id="b9b697e5-7cd5-4a24-b067-2c85b759a827" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%207.png"><img style="width:576px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%207.png"/></a></figure><p id="088d8e0b-8ae1-4bb9-9f9d-854dbdd563fe" class=""><strong>通胀问题得到了遏制</strong></p><p id="88054942-fd11-4eaf-99cf-cc12feddb513" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2008年——金融危机</summary><div class="indented"><p id="7a49b5c2-e687-4365-883f-257e6113d116" class="">改变了美联储传统的政策范式</p><ul id="b3ba59c9-937d-417c-8a9e-c7cd313230d7" class="bulleted-list"><li style="list-style-type:disc">新问题<ul id="f38fad0d-a756-48d8-828c-9e995f97dd7f" class="bulleted-list"><li style="list-style-type:circle">利率降低到0——<mark class="highlight-orange"><strong>流动性陷阱</strong></mark><mark class="highlight-orange">：</mark><mark class="highlight-orange"><strong>利率到了0，但是由于居民和企业都背负了非常高的债务，无论利率多低，人们也不支出，不去维持消费和经济增长</strong></mark></li></ul><ul id="cf6ed820-9fec-45cb-b715-ec1d417ee987" class="bulleted-list"><li style="list-style-type:circle">资产膨胀</li></ul></li></ul><ul id="1c3b4883-c265-44af-9d43-e85245057e17" class="bulleted-list"><li style="list-style-type:disc">新工具<ul id="fe649e54-5bf4-497a-b5cb-40a4b23d69da" class="toggle"><li><details open=""><summary>量化宽松（QE）——目前已经成为正统常备的工具</summary><p id="61bbd681-a564-4075-8bf0-47859d239187" class=""><mark class="highlight-yellow"><em>量化宽松（Quantitative Easing，简称QE）是一种货币政策工具，由中央银行用来刺激经济增长、降低利率、增加货币供应以及促进金融市场流动性的方法。这种政策通常在经济衰退或通货紧缩时被采用，旨在通过购买国债、政府债券、公司债券和其他金融资产来增加货币供应，从而降低长期利率，刺激投资和消费，提振经济。</em></mark></p><p id="1316515b-adde-4ba7-a99d-9f001a51255b" class=""><mark class="highlight-yellow"><em>以下是量化宽松的一些关键要点：</em></mark></p><ol type="1" id="5f06d483-8396-4cd7-84c3-c47ee6af3f46" class="numbered-list" start="1"><li><mark class="highlight-yellow"><em><strong>购买金融资产：</strong></em></mark><mark class="highlight-yellow"><em> 中央银行通过购买各种类型的金融资产，特别是政府债券，以增加货币供应量。这样的购买行为通常会导致金融市场中的资金流入，从而提高债券价格，降低债券收益率（利率）。</em></mark></li></ol><ol type="1" id="56acfc7f-45b8-49fb-b202-0cf7ec412480" class="numbered-list" start="2"><li><mark class="highlight-yellow"><em><strong>降低长期利率：</strong></em></mark><mark class="highlight-yellow"><em> 通过购买大量债券，中央银行可以推动债券价格上升，进而降低债券的收益率。长期利率的降低会影响银行贷款利率、抵押贷款利率等，促进企业和个人增加借款和投资。</em></mark></li></ol><ol type="1" id="acb5155e-a71d-4162-8daa-4d45a61b21b9" class="numbered-list" start="3"><li><mark class="highlight-yellow"><em><strong>增加货币供应：</strong></em></mark><mark class="highlight-yellow"><em> QE会增加市场上的货币供应量，从而有助于提高银行间流动性。这可以促进信贷的扩张，鼓励企业借款投资，刺激经济活动。</em></mark></li></ol><ol type="1" id="ede6fd71-e055-4021-b39b-29236aeb8787" class="numbered-list" start="4"><li><mark class="highlight-yellow"><em><strong>刺激投资和消费：</strong></em></mark><mark class="highlight-yellow"><em> 通过降低利率和增加货币供应，QE的目标是激励企业和个人进行投资和消费，从而提振经济增长。</em></mark></li></ol><ol type="1" id="732fdb87-f158-49e3-b4f7-4df3b18a10ec" class="numbered-list" start="5"><li><mark class="highlight-yellow"><em><strong>应对通货紧缩：</strong></em></mark><mark class="highlight-yellow"><em> 当通货紧缩风险增加时，央行可以采取量化宽松政策，以避免通货紧缩对经济造成损害。通过增加货币供应，央行可以提高通货膨胀水平，维持稳定的物价水平。</em></mark></li></ol></details></li></ul></li></ul><ul id="c9b8959a-5eb2-4ed9-97e5-f4907621091a" class="bulleted-list"><li style="list-style-type:disc">新使命<ul id="faaa18d3-fb4f-4b7b-b92f-2e9cddf444f7" class="bulleted-list"><li style="list-style-type:circle"><strong>对全球负责</strong>——美联储之前主要考虑本土的问题，但由于现在全球化程度太高，美联储认识到自己的政策不仅有本土责任，也有全球责任</li></ul><ul id="5167d5c9-6a44-4993-9c55-b2abf5f3fc1c" class="bulleted-list"><li style="list-style-type:circle">金融危机期间和很多发达银行实施了货币互换的政策：投放美元流动性。因为跨境企业有美元资产，遇到了融资危机，所以美国要站出来作为全球的贷款人支持全球经济</li></ul></li></ul><figure id="3cd985a4-daed-42b8-8f80-db58b027afd7" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%208.png"><img style="width:2845px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%208.png"/></a></figure><p id="e0dd96a0-d491-4447-b703-68d1e8dca5f3" class=""><strong>虽然7年之间利率一直在0，但是经济复苏缓慢</strong></p><figure id="f11e5ea6-babb-49b7-8bcc-10883f897a3a" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%209.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%209.png"/></a></figure><figure id="4b1eeb4e-f482-4010-9a3c-911f5948955b" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2010.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2010.png"/></a></figure><ul id="9dca5ad9-7d1f-41f0-a852-336acdae16b9" class="toggle"><li><details open=""><summary>08年海外中央银行<strong>流动性互换</strong></summary><p id="8877f9ca-740f-49d5-ba5a-49531503e5ea" class="">流动性互换的定义如下。（本质就是给海外的央行美元，让他们去救自己的银行或者企业，解决银行或者企业融不到钱的问题）</p><p id="d6ffc5ef-6d10-4856-8e15-2ed8a32ebd51" class=""><a href="https://www.federalreserve.gov/monetarypolicy/bst_liquidityswaps.htm#:~:text=In%20general%2C%20these%20swaps%20involve,the%20prevailing%20market%20exchange%20rate">https://www.federalreserve.gov/monetarypolicy/bst_liquidityswaps.htm#:~:text=In general%2C these swaps involve,the prevailing market exchange rate</a>.</p></details></li></ul></div></details><h2 id="f5ccab8a-abef-4596-9cc0-bac835c3d36c" class="">小结</h2><ul id="a6380d98-4788-4a43-8609-4a52332c5f65" class="bulleted-list"><li style="list-style-type:disc">脱离旧黄金体系，货币信用化</li></ul><ul id="dae7085d-7147-4806-a60d-4fa2328102db" class="bulleted-list"><li style="list-style-type:disc">脱离了财政和总统控制，主导货币政策</li></ul><ul id="1236dcb5-8753-44b9-86be-8634f4976c3c" class="bulleted-list"><li style="list-style-type:disc">脱离传统政策的边界与国界，探入新领域</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储的组织架构</summary><div class="indented"><p id="c7870904-74ef-499f-92b2-4fed705ea5c6" class="">最好的学习方法：看官网</p><figure id="dbdf2dc8-7978-440f-a127-31f82e52ec36"><a href="https://www.federalreserve.gov/aboutthefed/structure-federal-reserve-system.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Structure of the Federal Reserve System</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/aboutthefed/structure-federal-reserve-system.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure><figure id="389e2b17-e113-403e-83e0-b19b857b8a78" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2011.png"><img style="width:432px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2011.png"/></a></figure><ul id="1ce6c933-74e9-4ea9-b847-3b5245b67a1e" class="toggle"><li><details open=""><summary>需要记住以下三个关键实体：</summary><ul id="314ecf76-ad8c-48db-934f-2274d6d9ff49" class="bulleted-list"><li style="list-style-type:disc"><strong>Board of Governors</strong><ul id="10ee06ee-c069-453c-a5fa-0f725d687072" class="bulleted-list"><li style="list-style-type:circle">董事会是美联储的主要决策机构，总共由<strong>七名</strong>董事组成，<strong>每任任期14年</strong>。</li></ul><ul id="5d4f1461-cac9-42b4-8dbb-ee0cde65ee04" class="bulleted-list"><li style="list-style-type:circle">董事会的主要职责包括制定货币政策、监管银行业、管理金融体系的稳定性，以及制定一些金融监管政策。</li></ul><ul id="24b3d238-f880-485e-a4a8-ac3e17c5a91f" class="bulleted-list"><li style="list-style-type:circle">董事会的主席由成员中选出，<strong>任期四年</strong>，负责协调和领导美联储的日常运作。</li></ul></li></ul><ul id="822c2ea6-cdf7-4b5a-b6bc-32821d5638ce" class="bulleted-list"><li style="list-style-type:disc"><strong>Federal Open Market Committee，FOMC</strong><ul id="f2bc451e-3446-48ed-90f7-688124b59015" class="bulleted-list"><li style="list-style-type:circle">FOMC是美联储的货币政策决策机构，由董事会的七名董事和五名联邦储备银行行长组成。</li></ul><ul id="dcb65527-6486-4dca-8e94-5eb3c2451e46" class="bulleted-list"><li style="list-style-type:circle">FOMC定期召开会议，讨论并决定利率政策以及其他货币政策措施，以支持美国经济的稳定增长和就业。</li></ul></li></ul><ul id="738dfd27-c7c8-422d-92f0-edca1a031380" class="bulleted-list"><li style="list-style-type:disc"><strong>Federal Reserve Banks</strong><ul id="2a4b3974-2bf9-4e36-a2d7-5475124f641f" class="bulleted-list"><li style="list-style-type:circle">美国被分为12个联邦储备区，每个储备区都设有一家联邦储备银行。</li></ul><ul id="5f0f8fb1-b7ab-4de7-a0e9-d35c67d6b62e" class="bulleted-list"><li style="list-style-type:circle">这些储备银行是美联储的地方分支机构，负责执行货币政策、提供金融服务，监管和监督当地金融机构，以及维护金融体系的稳定。</li></ul><ul id="07b44793-e02b-42af-8017-964718cf5329" class="bulleted-list"><li style="list-style-type:circle">每家联邦储备银行都由一个董事会管理，成员由私营部门选出，同时也有联邦政府的监督。</li></ul></li></ul></details></li></ul><h2 id="f45f0659-0826-4f32-80a7-96ff9b4c4cf1" class="">美联储权利层级</h2><ul id="fecd9127-92ef-480f-97ca-09c1097fcc47" class="bulleted-list"><li style="list-style-type:disc">法律至高无上</li></ul><ul id="20301016-f59e-4f42-9bd1-3c10558a1443" class="bulleted-list"><li style="list-style-type:disc">总统和国会牵引着美联储</li></ul><ul id="ca939654-e56c-4d7a-94b5-263ff6237a93" class="bulleted-list"><li style="list-style-type:disc">市场对美联储主席的关注过多（FOMC中的委员都需要pay attention）</li></ul><p id="4c21b1ca-51c5-4a41-8315-1f10471ab014" class="">
+</p><h3 id="f4926014-b419-4b3c-9585-06e72dfee204" class="">名义上的中央银行独立性</h3><blockquote id="7b927c1b-6978-47db-89f6-8c10cca2db4c" class="">央行的独立性得以保障的情况下，如果受到政治家的压力，货币政策制定过于扩张，或者是政府财政依赖于货币政策作为融资来源，这可以避免通胀上行——伯南克</blockquote><p id="2b651db8-40dc-4674-9d40-bb8ad356b2be" class=""><em><mark class="highlight-gray">也就是如果没有独立性：总统大选可能促进通胀，因为总统想要好看的经济数据和就业数据</mark></em></p><p id="ba761d7f-b30d-4d94-9567-55ecc89e1fa6" class="">
+</p><ul id="cae9f10c-e6ff-4e5a-975f-93db0b40278f" class="toggle"><li><details open=""><summary>欧洲的债务危机：欧洲国家没有货币主权，只有财政主权</summary><p id="3b924b6f-5341-40bf-9317-deb1f16cf399" class=""><mark class="highlight-gray"><em>在欧债危机期间，欧洲国家确实面临了财政主权和货币主权之间的分离，这导致了一些困难和挑战。以下是一些解释：</em></mark></p><p id="b6ae41a2-03f7-4f73-abac-c0ae9c0454bd" class=""><strong><mark class="highlight-gray"><em>财政主权： 财政主权是指一个国家在制定和执行自己的财政政策，包括税收、支出和债务政策等方面的能力。在欧洲，各个成员国拥有自己的财政主权，可以制定独立的财政政策。</em></mark></strong></p><p id="03d4a12e-a58a-46ff-95d2-910ea1401b6a" class=""><strong><mark class="highlight-gray"><em>货币主权： 货币主权是指一个国家拥有自主管理和发行货币的权力。然而，在欧元区（使用欧元作为共同货币的国家集合）内，各个成员国失去了独立的货币主权，转而共享了欧元这一共同货币。</em></mark></strong></p><p id="7f0c7574-446d-41f1-bae9-6385560fbab7" class=""><mark class="highlight-gray"><em>在欧债危机期间，欧元区内的一些国家陷入了债务危机，而</em></mark><span style="border-bottom:0.05em solid"><mark class="highlight-gray"><em>由于失去了独立的货币主权，它们无法通过贬值本国货币来调整经济状况</em></mark></span><mark class="highlight-gray"><em>。通常情况下，一个国家如果面临经济问题，可以通过贬值本国货币来提高出口，刺激经济增长。然而，欧元区内的国家无法采取这种措施，因为它们共享同一货币。</em></mark></p><p id="0e5d7c65-1e62-43ca-9653-0b711f4fc525" class=""><mark class="highlight-gray"><em>此外，欧元区内的货币政策由欧洲中央银行（ECB）独立制定和执行，这意味着各个成员国无法单独调整自己的货币政策以应对经济问题。这种局面在危机时期尤其显得困难，因为一些国家无法通过货币政策来降低利率、刺激信贷等，来缓解危机的影响。</em></mark></p><p id="7daa814d-4c40-4bdf-8dce-c6929bf2b4a5" class=""><mark class="highlight-gray"><em>欧债危机的一部分解决方案包括对欧洲联盟的经济政策进行更深层次的整合，以及建立更紧密的财政和经济联盟，以应对成员国之间的不平衡问题。然而，这些问题仍然存在，并且在欧洲政治和经济层面上引发了一系列复杂的讨论和争议。</em></mark></p></details></li></ul><p id="e3095d81-a49d-4510-8656-8c6d4a9dbad0" class="">
+</p><p id="459f00ec-c9b6-4db2-a486-c59851473921" class=""><strong>美联储财政部协议</strong></p><figure id="ac2f21a4-f92c-44e1-aebd-d0be3bdd6959" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2012.png"><img style="width:2069px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2012.png"/></a></figure><p id="ed8a39d1-0fd6-46e9-968f-5b2280c5730d" class="">朝鲜战争之前，二战之前美联储政府也去购买了大量的美债用于支持美国政府的开支</p><p id="472ce760-0959-4cdc-b881-b9deda0e607a" class="">
+</p><h3 id="1094e262-07a9-4e7e-aa5f-789e186d7b54" class="">实际上并不能做到独立</h3><figure id="9513307c-f4b5-49e0-9fa3-02c56c838ee5" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2013.png"><img style="width:2565px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2013.png"/></a></figure><p id="9c297267-58e4-467d-8bef-d296a48fc403" class="">左图：特朗普对于鲍威尔的加息政策并不满意</p><p id="aafb4d1a-1f54-43fc-9b44-a46096daeda5" class="">右图：美联储每年向美国财政部转移的收入，在2015年几乎要触及到1000亿的规模</p><p id="89a880e5-578c-4d29-a377-bd8569eb84c4" class="">
+</p><p id="79701f66-a6d7-4dde-9685-5a75fda20839" class="">美联储的利润来源：</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f2a8d689-5df9-4d72-a87d-719b3620435f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>美联储的资产端持有大量的美国国债，在美国国债上赚的钱需要悉数回馈给美国的财政部</strong></div></figure><p id="12821b97-835d-4912-885f-c776f49017b7" class="">
+</p><h2 id="8bef7854-73df-4b92-b03a-ee9d90de993f" class="">美联储的内部冲突</h2><h3 id="a31e37e6-71c5-4162-a956-1de0e007a270" class="">鹰派和鸽派的冲突</h3><div id="ca1ba52b-a718-462d-b6ec-05a7aaa69898" class="column-list"><div id="83898277-3dea-470b-8de8-2341fd090207" style="width:50%" class="column"><p id="f1a8bac7-9c60-4f6e-9ab8-c8ea949c7445" class=""><strong>鹰派观点：</strong></p></div><div id="fd05243f-6616-4c27-97d6-b79917e67e50" style="width:50%" class="column"><p id="593fb8d3-f0fa-420b-99cc-70e3e05b9ed5" class=""><strong>鸽派观点：</strong></p></div></div><div id="dcc05c3a-5c80-43a6-8381-c016aae0827c" class="column-list"><div id="551c4722-23d9-4d57-943f-2441ace00cf3" style="width:50%" class="column"><figure id="5781268c-ffd8-40fe-8ab6-8928e21d4dab" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2014.png"><img style="width:240px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2014.png"/></a></figure><ul id="98919e0b-02cd-4074-a9e3-9e7bb267ba5d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>泰勒规则：一旦通胀水平到达某一个阈值，或者失业率达到自然失业率，就要按照规则进行加息。</strong></mark></li></ul><ul id="ced710a6-681b-44cd-8ad9-c80831bdd758" class="bulleted-list"><li style="list-style-type:disc"><strong>纪律性</strong>：一定要遵守规则，不要左右摇摆</li></ul></div><div id="4497ad98-d19f-4f66-8658-792804a0781f" style="width:50%" class="column"><figure id="3a839651-4ce3-435e-9418-f52841750589" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2015.png"><img style="width:240px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2015.png"/></a></figure><ul id="83c45e5d-4d25-4c89-a93e-fa10ddf45470" class="bulleted-list"><li style="list-style-type:disc"><strong>反对明确的前瞻指引</strong>：比如说把话说的非常清楚，比如到了某一个点就开始加息</li></ul></div></div><h3 id="5eda090d-70ed-468a-beda-d33707df8a37" class="">顺周期和反周期的冲突</h3><div id="b2f95fab-2a32-47b5-a946-e9986a5ba788" class="column-list"><div id="4c43d5cb-617a-4b03-954e-0b09e410ab37" style="width:50%" class="column"><ul id="e55d58f9-b258-4bd8-af3c-7bbef7e0a2ea" class="bulleted-list"><li style="list-style-type:disc">leaning against the wind</li></ul><ul id="f9273ba6-6649-435e-b7e6-2c2d0da2b667" class="bulleted-list"><li style="list-style-type:disc">反周期，逆风而动，先手</li></ul><ul id="a2b88775-e3ea-41ea-9cc0-ed03e6fa221c" class="bulleted-list"><li style="list-style-type:disc">代表人物耶伦</li></ul></div><div id="daf0d7e5-4385-428f-8e8c-5bf532bf5939" style="width:50%" class="column"><ul id="b64fd470-d47c-469e-a979-ba21a83bada7" class="bulleted-list"><li style="list-style-type:disc">behind the curve</li></ul><ul id="30af300d-4ee8-4dd4-bd70-3f70477adf88" class="bulleted-list"><li style="list-style-type:disc">顺周期，顺势而为，后手</li></ul><ul id="6867be38-bb16-452b-a63f-82b6a4d6ec9c" class="bulleted-list"><li style="list-style-type:disc">代表人物伯南克</li></ul></div></div><h2 id="35289a70-327b-4842-8b50-7b09fa9d2d56" class="">分歧与冲突对市场的影响</h2><ul id="cc8ff250-b1ba-4cf6-94b0-494aff3a00ea" class="bulleted-list"><li style="list-style-type:disc">政策的可预测性差、稳定性和一致性差</li></ul><ul id="3f233742-fc6a-40be-9c69-0a6363d22006" class="bulleted-list"><li style="list-style-type:disc">市场定价紊乱，导致预期频繁波动，冲击经济</li></ul><ul id="cec6c746-bfe9-4bff-86da-70acbc4e1314" class="bulleted-list"><li style="list-style-type:disc">最终导致美联储无法达到政策目标</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储货币政策架构</summary><div class="indented"><h2 id="a859c3e8-11eb-4078-9429-c3f63cc95ef5" class="">美联储的政策目标</h2><ul id="e475de5d-a4fd-4987-90cc-d4d41b93140b" class="bulleted-list"><li style="list-style-type:disc">充分就业（写进法律）</li></ul><ul id="5261366f-888b-44b9-b2d5-924316be8f10" class="bulleted-list"><li style="list-style-type:disc">稳定通胀（写进法律）</li></ul><ul id="a60e4a07-a8f5-4c53-a2c0-5b0177d46f0f" class="bulleted-list"><li style="list-style-type:disc">长期利率稳定（基本不再提）</li></ul><ul id="949c3d00-be07-490c-ad6b-230889cd7ddf" class="bulleted-list"><li style="list-style-type:disc">其他隐形目标</li></ul><p id="c17d1209-3c38-4d0f-ae7e-6fe880ea2c3d" class="">
+</p><p id="483f9509-61cd-45ff-8d09-6c656fb98efd" class=""><mark class="highlight-red"><strong>充分就业和稳定通胀</strong></mark><strong>是写进法律的平等的目标</strong></p><p id="130b24b2-e0ef-41e2-aec3-8182fbcb6dce" class="">
+</p><p id="d1773333-1b9c-4cad-9095-2d9867ae2278" class="">下图是来自鲍威尔演讲的一张图，蓝线代表失业率于自然失业率之差，红线是通货膨胀率</p><figure id="d95d2a13-88cc-49de-ad4d-77f8f859b5bf" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2016.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2016.png"/></a></figure><p id="642c0227-96ed-456b-9148-7c30edb44ca4" class="">可以看出，1964-1970，通胀开始大幅度上行，最开始失业缺口是缩小的，说明经济体中有很多闲置的劳动力，之后随着通胀继续上行，失业率缺口减小，说明就业机会减少。也就是在石油危机期间，沃尔克坚持加息，抑制通胀</p><p id="9a425e81-e6cc-4cb8-a061-fc7611db45b3" class="">
+</p><ul id="08c58671-c259-4d6b-816f-39527132d536" class="toggle"><li><details open=""><summary><mark class="highlight-yellow"><em>石油危机</em></mark></summary><p id="df092d59-9564-4ba7-b648-1fb6f3b40511" class=""><mark class="highlight-yellow"><em>&quot;石油危机&quot;通常指的是20世纪70年代两次全球性的石油价格激增事件，分别是1973年的第一次石油危机和1979年的第二次石油危机。这两次危机对全球经济产生了深远的影响，导致了通货膨胀、能源短缺和经济衰退。</em></mark></p><ul id="95ef2cd7-1eda-4125-847a-0d3e6e764d2f" class="toggle"><li><details open=""><summary><strong><mark class="highlight-yellow"><em>第一次石油危机（1973年）</em></mark></strong></summary><p id="02ca3928-2d58-44a0-abed-2d392ec49494" class=""><mark class="highlight-yellow"><em>这次危机由于中东国家与以色列之间的战争（即第四次中东战争，也称为“10月战争”）引发。阿拉伯产油国（主要是石油输出国组织OPEC的成员国）对支持以色列的西方国家施加石油禁运，并限制了石油产量。这导致全球石油供应减少，油价大幅上涨，引发了能源危机和通货膨胀。</em></mark></p></details></li></ul><ul id="ab81f6db-95d0-4fa2-b22b-f608a38c9e24" class="toggle"><li><details open=""><summary><strong><mark class="highlight-yellow"><em>第二次石油危机（1979年）</em></mark></strong></summary><p id="56dd587c-1e43-40c5-b5de-baca560acc0c" class=""><mark class="highlight-yellow"><em>这次危机起因于伊朗伊斯兰革命，导致伊朗石油出口受到严重限制。此外，苏联入侵阿富汗也引发了国际对抗，使石油市场紧张。石油价格再次大幅上涨，进一步加剧了全球经济的困难局面。</em></mark></p></details></li></ul><p id="69553eb5-9c26-4c57-a68e-e43e3ed48a62" class=""><mark class="highlight-yellow"><em>这两次石油危机导致了高通货膨胀、经济衰退和能源政策的重新评估。许多国家开始探索寻找替代能源和能源节约方法，以减少对石油的依赖。这些危机也促使许多国家采取措施来增强能源安全性和多样化能源供应。</em></mark></p></details></li></ul><p id="cc3cd360-8c62-4f5a-ae7d-e753f5560dce" class="">
+</p><p id="bf672560-7695-4f1d-949a-d460084844c4" class=""><mark class="highlight-gray"><em>从图中也可以看到在20年之后，失业率降低到低位水平，预示着经济过热的风险</em></mark></p><p id="10f084e1-70a1-40ec-b116-a4f441676266" class="">
+</p><h2 id="24970611-63b4-41a3-9697-77a8e03a510a" class="">双重使命三问</h2><ul id="3649619b-dd7e-43c1-a123-2584505aa018" class="bulleted-list"><li style="list-style-type:disc">失业率是否低于自然失业率<ul id="404be8a7-87d5-41d6-bd07-f3669f2aa58e" class="bulleted-list"><li style="list-style-type:circle">是：劳动力市场有过热现象</li></ul></li></ul><ul id="7030ddc9-1a14-420b-961d-ddc9cbbc1e18" class="bulleted-list"><li style="list-style-type:disc">PCE通胀是否达到2%<ul id="e4ac14ba-26bd-4816-8615-4f42bef64010" class="toggle"><li><details open=""><summary><mark class="highlight-yellow"><em>PCE（personal consumption expenditure）个人消费支出</em></mark></summary><p id="8a24bccf-0d78-4280-b9ab-1a2850c7f987" class=""><mark class="highlight-yellow"><em>PCE测量的是人的消费行为。该数据关注的是消费者如何分配自己的收入、具体的开支项目。个人消费支出通常包含三个指数类别：</em></mark></p><ul id="0426009c-60fb-40c2-89a3-4e49db81fd18" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>耐用品：比如汽车、电视等寿命比较长的物品</em></mark></li></ul><ul id="cf316341-5e80-4f92-97f4-f9833999186b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>非耐用品：比如衣服和汽油</em></mark></li></ul><ul id="880bfc9e-8b4f-431e-a8aa-6c57a515b172" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><em>服务：包含医疗保健和住房支出</em></mark></li></ul><p id="1ec72d16-821b-445f-9297-2740c91c3d29" class=""><mark class="highlight-yellow"><em>这里需要提到CPI和PCE的区别：</em></mark></p><figure id="af8cf804-2462-4244-9397-c3f9ffe61d43"><a href="https://zhuanlan.zhihu.com/p/377255525" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">两大通胀衡量指标：CPI和PCE物价指数有何区别</div><div class="bookmark-description">作者：知山教育 通货膨胀这个词可以说是大众经常能听到的一个专业经济词汇。我们常说如果货币的供应超过了实际需求，货币会开始贬值，物价随之上涨，这就是通货膨胀。说得再简单点就是钱不值钱了。 对于各大央行来…</div></div><div class="bookmark-href"><img src="https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.81060cab.png" class="icon bookmark-icon"/>https://zhuanlan.zhihu.com/p/377255525</div></div></a></figure><p id="a0ae86ee-de2b-406d-b71b-6487082c94bc" class=""><mark class="highlight-yellow">CPI仅仅计算一个篮子的物品，PCE剔除掉品牌忠诚度、价格敏感度低等干扰因素，一个理性的消费者应该会去追求更加合算的商品。所以</mark><mark class="highlight-yellow"><strong>PCE的通胀数据通常低于CPI</strong></mark></p></details></li></ul><ul id="ae14df38-a0ae-49aa-9d35-30f19f24bbc8" class="bulleted-list"><li style="list-style-type:circle">否：通胀目标拖锚，联储会降息刺激经济</li></ul></li></ul><ul id="7df90b86-71b0-4f42-8104-38a9345abffb" class="bulleted-list"><li style="list-style-type:disc">经济增长状况如何</li></ul><p id="6ae6d511-360a-4b0d-a610-1c99a8fba61f" class="">
+</p><h2 id="f2f683c4-a8aa-4746-87e7-b8ae86c7fc2c" class="">外部环境</h2><figure id="3c5244fa-74ee-4c40-9a65-26530eb6c1c9" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2017.png"><img style="width:2219px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2017.png"/></a></figure><ul id="2e808404-e81d-4afc-b39d-16a1fa850d5b" class="bulleted-list"><li style="list-style-type:disc">外溢性与回溢性<ul id="a0b6e7d8-fece-4496-b5b1-69797a1b81c9" class="bulleted-list"><li style="list-style-type:circle">外溢性：美国的宽松会影响其他国家的投资者的行为和情绪</li></ul><ul id="3fdedc92-f754-4a10-af0d-52ab3d5fb44d" class="bulleted-list"><li style="list-style-type:circle">回溢性：外部经济体的需求和情绪会反过来体现在美股和美国经济上</li></ul></li></ul><ul id="2535c65d-e2c8-4e6d-add2-85f9988dbf7d" class="bulleted-list"><li style="list-style-type:disc">次级目标<ul id="0a064f57-01c9-4572-8e86-7023aa9f40ff" class="bulleted-list"><li style="list-style-type:circle">注意并没有写入法律</li></ul></li></ul><p id="7df126b3-2ba8-4748-bbbb-538beb51e619" class="">
+</p><p id="9a4af58f-fea1-4ae5-9d7b-4a871b298187" class="">考虑外部环境的时候需要思考以下三个问题：</p><ul id="ebf56837-a162-449e-8f20-24ba8a3bbd98" class="bulleted-list"><li style="list-style-type:disc"><strong>全球化如何影响美国政府的政策目标</strong><ul id="d4e62ded-008d-4b6d-9966-e2c54762d3ef" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong><em>全球价值链</em></strong></mark></summary><p id="0483fc67-83bc-4329-b98a-dbd7063d46c0" class="">当我们谈论全球价值链时，我们指的是一个复杂的生产和供应网络，涵盖了不同国家和地区之间的各种活动，从原材料采购、生产、加工，到分销和最终消费。这个概念强调了各个国家在生产过程中的相互依赖性，以及如何通过跨国合作来创建最终产品或服务。</p><p id="ca93b973-79c9-4177-927a-5f76d3eeec25" class="">全球价值链由多个环节组成，每个环节涉及不同的生产和加工活动。这些环节可以跨越不同国家，每个国家负责完成其中一部分工序。这种分工和协作使得整个生产过程更加高效，能够在全球范围内充分利用资源和专业知识。</p><p id="0c1c2c08-e64a-4b23-a72d-b855b792ee97" class="">举例来说，想象一家公司制造电子产品，如智能手机：</p><ol type="1" id="d5b72213-7e11-46a9-b65f-5185345beac2" class="numbered-list" start="1"><li><strong>设计与研发（Research and Development，R&amp;D）：</strong> 设计团队可能位于一个国家，负责研发新产品的概念和设计。</li></ol><ol type="1" id="5dc66fac-292c-41d7-a1f3-c147648fdea9" class="numbered-list" start="2"><li><strong>原材料采购：</strong> 公司可能从世界各地购买原材料，如金属、塑料、电子元件等。</li></ol><ol type="1" id="0138564e-b210-4446-992b-54de20989fcc" class="numbered-list" start="3"><li><strong>生产制造：</strong> 不同部件的制造可能分散在多个国家。例如，芯片制造可能在一个国家，显示屏制造可能在另一个国家。</li></ol><ol type="1" id="2caa6cf3-bd2d-494a-82a8-5c7d11e5f285" class="numbered-list" start="4"><li><strong>装配与加工：</strong> 各个部件可能被运送到一个国家进行最终装配，生成完整的产品。</li></ol><ol type="1" id="451dc1d7-beac-4641-ad1e-2b0434875dee" class="numbered-list" start="5"><li><strong>测试与质检：</strong> 产品可能被送到另一个国家进行质量检测和测试。</li></ol><ol type="1" id="1d80d2fe-dd1e-4105-acbe-6cf9cab6ce63" class="numbered-list" start="6"><li><strong>分销与销售：</strong> 成品可能分销到全球各地的市场。</li></ol><ol type="1" id="df12189d-6dce-4473-8610-50a1d45351da" class="numbered-list" start="7"><li><strong>售后服务：</strong> 售后支持和维修可能在多个国家提供。</li></ol><p id="c610405c-cd83-441a-99e7-4c0ecf50a7ab" class="">这个例子只是一个简化的描述，实际的全球价值链可能涵盖更多的环节和国家。全球价值链的发展使得企业可以根据不同国家和地区的优势，更有效地组织生产过程，降低成本，提高效率，同时也为消费者提供了更多多样化和高品质的产品选择。</p><p id="a03bbbd1-a397-4cc1-97b4-83569cbd8929" class="">然而，全球价值链也带来了一些挑战，如供应链风险、知识产权保护等问题。在全球化的背景下，各国政府和企业需要合作，以确保全球价值链的稳定和可持续发展。</p></details></li></ul><ul id="c23550f4-d20c-4882-b91d-1d3ee6439634" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue"><strong><em>全球劳动力</em></strong></mark><ul id="fe05412a-974d-4edd-bf25-8eea964cdbb6" class="bulleted-list"><li style="list-style-type:square">全球生产成本趋同（因为贸易一体化，全球通胀下行）</li></ul><ul id="5b2adc68-adb1-474a-a742-8c00b05216ba" class="bulleted-list"><li style="list-style-type:square">发达市场的通胀水平</li></ul></li></ul><ul id="33c3fe08-24f6-42bf-86d0-a37a443bd9e2" class="bulleted-list"><li style="list-style-type:circle"><strong><mark class="highlight-blue"><em>全球资本市场</em></mark></strong></li></ul><figure id="9e418e7b-2cbe-41d7-b32a-1983b8883082" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2018.png"><img style="width:2510px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2018.png"/></a></figure><p id="9fcf4b35-0901-4b96-b2ca-da693b634012" class="">左图：<mark class="highlight-yellow"><strong>美国股市和全球股市的相关性在不断上升</strong></mark>（所以美股被全球的投资者视为市场情绪和全球经济的风向标）</p><p id="00b4c4c8-f6ec-4ab5-8b12-696585988695" class="">右图：<strong><mark class="highlight-yellow">发达国家通胀相关性非常高</mark></strong></p></li></ul><ul id="30eb9ceb-7d66-4220-8a2c-d0d66c36f029" class="bulleted-list"><li style="list-style-type:disc">全球金融市场的表现会影响美联储的决策吗<ul id="c517c5fc-7867-4cde-809e-07a570183e8a" class="bulleted-list"><li style="list-style-type:circle">是的</li></ul></li></ul><ul id="3e79055a-c267-4e94-8d07-c16d0c21dfc8" class="bulleted-list"><li style="list-style-type:disc"><strong>海外经济和美国经济如何互动</strong><ul id="2bb11667-923b-4458-8032-6c101c1f0f3c" class="bulleted-list"><li style="list-style-type:circle">全球总需求的变化会影响<mark class="highlight-blue"><strong>贸易和进出口</strong></mark></li></ul><ul id="9f02aef0-8e96-4db9-9857-1923181a7531" class="bulleted-list"><li style="list-style-type:circle">贸易冲突也会影响美国的经济——出口进口和相应GDP</li></ul><ul id="89773933-cdb0-4f39-981b-c534ca728ae3" class="bulleted-list"><li style="list-style-type:circle">通过美元流动性来影响</li></ul></li></ul><p id="f9209a1f-ef2c-4e1b-ad64-ad01614ec960" class="">
+</p><h2 id="19067efb-ae76-4095-a58a-db4a22d2e293" class="">美联储所关注的风险</h2><ul id="dcad9b67-9187-415b-a00c-ada81f043ca4" class="bulleted-list"><li style="list-style-type:disc">金融部门过度加杠杆<ul id="f1c5abbe-f9f9-4a02-b879-53c220b7eed4" class="bulleted-list"><li style="list-style-type:circle">08年危机房地产出现的问题</li></ul></li></ul><ul id="f7a03fc7-c87e-4122-bf0e-7a0f16735fec" class="bulleted-list"><li style="list-style-type:disc">融资风险<ul id="1bf8e999-98b1-4565-8d74-3a13e110000d" class="bulleted-list"><li style="list-style-type:circle">资金链流动性的保持，让银行不会面对流动性风险</li></ul></li></ul><ul id="243b5496-9983-4ee6-9046-5ee8774cbda1" class="bulleted-list"><li style="list-style-type:disc">家庭、企业部门债务负担<ul id="71215218-3792-49cc-904d-21f4c3c737f0" class="bulleted-list"><li style="list-style-type:circle">08年家庭就加上了很高的杠杆</li></ul></li></ul><ul id="330c3095-76bc-4bcd-8be6-d3d33cf29932" class="bulleted-list"><li style="list-style-type:disc">资产估值水平<ul id="f6caf643-12db-4bd5-b078-b6445bfabfee" class="bulleted-list"><li style="list-style-type:circle">企业估值过高会产生不利影响</li></ul></li></ul><p id="15d8b7ab-35e7-41e5-badd-59c433d85251" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储的货币政策框架-工具</summary><div class="indented"><ul id="983969a8-98db-498a-80ff-90916f3b3803" class="bulleted-list"><li style="list-style-type:disc">公开市场要求</li></ul><ul id="b543a432-edb7-4eff-9256-063afd33ac8b" class="bulleted-list"><li style="list-style-type:disc">准备金要求</li></ul><ul id="19cefe14-642e-4ded-84f4-59a1e8c9384d" class="bulleted-list"><li style="list-style-type:disc">利率下限体系</li></ul><ul id="559c8a2c-032d-48cd-bbdc-9cf78f984cf7" class="bulleted-list"><li style="list-style-type:disc">沟通政策</li></ul><ul id="e532f33b-9b96-48e0-bfd3-5e470f12de9c" class="bulleted-list"><li style="list-style-type:disc">资产购买</li></ul><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">美联储的利率政策</summary><div class="indented"><p id="3080f097-0c85-4ef8-9db7-63d0bc8cc5e6" class="">涉及的利率主要包含以下三类：</p><ul id="62aa6b7f-59f9-48a8-99c9-6f4a2e067b56" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>联邦准备金利率</strong></mark><ul id="7e4ee945-1fa7-4af9-866a-55f7c7984d11" class="toggle"><li><details open=""><summary><mark class="highlight-orange"><em>定义</em></mark></summary><p id="942010aa-3581-461d-add9-44d5730393d9" class="">在<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD">美国</a>，<strong>联邦资金利率</strong>（Federal Funds Rate）为一家<a href="https://zh.wikipedia.org/w/index.php?title=%E5%AD%98%E6%89%98%E6%A9%9F%E6%A7%8B&amp;action=edit&amp;redlink=1">存托机构</a>（多数是银行）利用手上的资金向另一家存托机构无担保借出隔夜贷款的<a href="https://zh.wikipedia.org/wiki/%E5%88%A9%E7%8E%87">利率</a>。联邦基金利率是金融市场的重要基准之一。联邦资金利率即是美国各家<a href="https://zh.wikipedia.org/wiki/%E9%8A%80%E8%A1%8C">银行</a>间的<a href="https://zh.wikipedia.org/wiki/%E9%8A%80%E8%A1%8C%E5%90%8C%E6%A5%AD%E6%8B%86%E6%81%AF">银行同业拆息</a><a href="https://zh.wikipedia.org/zh-hans/%E8%81%94%E9%82%A6%E5%9F%BA%E9%87%91%E5%88%A9%E7%8E%87#cite_note-2">[2]</a>，代表的是短期市场利率水准。</p><figure id="e51a62aa-e808-48c1-afc6-711397a9ecca"><a href="https://zh.wikipedia.org/zh-hans/联邦基金利率#:~:text=在美国，联邦资金利率,是短期市场利率水准。" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">联邦基金利率 - 维基百科，自由的百科全书</div><div class="bookmark-description">在美国，联邦资金利率（Federal Funds Rate）为一家存托机构（多数是银行）利用手上的资金向另一家存托机构无担保借出隔夜贷款的利率。联邦基金利率是金融市场的重要基准之一。[来源请求][1]联邦资金利率即是美国各家银行间的银行同业拆息[2]，代表的是短期市场利率水准。</div></div><div class="bookmark-href"><img src="https://zh.wikipedia.org/static/apple-touch/wikipedia.png" class="icon bookmark-icon"/>https://zh.wikipedia.org/zh-hans/联邦基金利率#:~:text=在美国，联邦资金利率,是短期市场利率水准。</div></div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Federal_Funds_Rate_%28effective%29.svg/1200px-Federal_Funds_Rate_%28effective%29.svg.png" class="bookmark-image"/></a></figure></details></li></ul><ul id="2fc6ddc1-6f5b-45ad-8ca3-f4bc6eae291f" class="bulleted-list"><li style="list-style-type:circle">最重要的基准利率</li></ul><ul id="8a9b8bcf-ff1c-477e-967f-97dc86ab5ea1" class="bulleted-list"><li style="list-style-type:circle">货币价格的体现</li></ul></li></ul><ul id="be8d4455-1749-43a1-95a6-3df4788754d4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>准备金存款利率</strong></mark><ul id="5767090b-b30c-43b0-84f3-a6c9f22351a0" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">对于银行而言的存在美联储的无风险利率</span></li></ul><ul id="b327a85a-07da-4051-b311-789c262835e2" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><em><span style="border-bottom:0.05em solid"><strong>银行不会以低于这个利率的水平去市场放贷（因为存在信用风险）</strong></span></em></mark></li></ul><ul id="13810dd6-c64b-4d7b-a469-e5591d48058a" class="bulleted-list"><li style="list-style-type:circle">由此决定了银行的利率下限</li></ul></li></ul><ul id="29807fe1-3a7b-41b2-a291-2ccb24310e8f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>隔夜逆回购利率</strong></mark><ul id="58537fb5-3b47-406c-9073-2e5a6d2a13be" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><em><span style="border-bottom:0.05em solid"><strong>非银机构不会以低于这个利率去市场上放贷</strong></span></em></mark></li></ul></li></ul><p id="b3ee7695-34ce-4c5f-8388-a43923ba5a17" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">沟通政策（前瞻指引 forward guidance）</summary><div class="indented"><figure id="f2dfedf9-1b4d-4e95-b689-5b40fc6bdef7" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2019.png"><img style="width:2483px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2019.png"/></a></figure><p id="4b2b0708-a481-4673-b02a-5999454f9e3d" class="">这里的数据是六月的，march projection是在和3月的做对比。这些变化往往是联储根据新的放出来的数据进行的调整，这些会影响市场的预期</p><p id="a53ff318-cd9d-4b46-b12f-da9ad4b89de8" class="">
+</p><ul id="d9a2cdaf-329c-4603-a582-539c495c010f" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><em>ChatGPT对于Forward Guidance做出了更详细的解释</em></mark></summary><p id="f2813c13-1a3e-4a01-855b-a6c96b7ce1b1" class=""><mark class="highlight-blue"><em>&quot;Forward guidance&quot;（前瞻性指引）是美联储（美国联邦储备系统）在制定货币政策时使用的一种沟通工具，旨在向市场参与者、媒体和公众传达有关未来货币政策走向的信息。它旨在影响市场预期，帮助引导市场走向与美联储所追求的经济目标相符的方向。</em></mark></p><p id="069c42d4-5935-4034-a0c1-5107e08d7a6a" class=""><mark class="highlight-blue"><em>前瞻性指引的核心思想是，通过明确表达或暗示未来货币政策决策的预期走向，可以影响市场参与者的预期，并在一定程度上影响市场利率、投资、消费等经济活动。以下是一些前瞻性指引的常见形式：</em></mark></p><ol type="1" id="6c640da3-3560-4609-886b-604d7e9b67c4" class="numbered-list" start="1"><li><mark class="highlight-blue"><em><strong>利率前瞻性指引：</strong></em></mark><mark class="highlight-default"><em> </em></mark><mark class="highlight-gray"><em>美联储可能会明确表达对短期利率（比如联邦基金利率）未来变化的预期。例如，美联储可能表示，预计在未来数次会议中将保持低利率政策，或者可能在某个时间点开始逐步提高利率。</em></mark></li></ol><ol type="1" id="461d13f2-379b-4ab5-ba2e-48bbbaab65d3" class="numbered-list" start="2"><li><mark class="highlight-blue"><em><strong>经济数据阈值：</strong></em></mark><mark class="highlight-gray"><em> 美联储可以指定某些经济数据的阈值，一旦这些数据达到或超过特定水平，可能会触发货币政策调整。例如，美联储可能表示只有当失业率降至一定水平、通货膨胀率达到特定目标时才会考虑加息。</em></mark></li></ol><ol type="1" id="53eeb6ef-e240-48a3-a1d6-a34b7dcb9ad3" class="numbered-list" start="3"><li><mark class="highlight-blue"><em><strong>时间依赖性指引：</strong></em></mark><mark class="highlight-gray"><em> 美联储可能会明确说明预计在未来的一段时间内维持某种货币政策立场，不考虑短期的经济波动。</em></mark></li></ol><p id="a4336972-0d28-4c27-9648-aa28b72fa1bc" class=""><mark class="highlight-blue"><em>通过前瞻性指引，美联储试图影响市场预期，从而引导市场参与者在做出投资和经济决策时考虑未来货币政策的走向。这可以帮助市场更好地适应政策调整，降低市场波动性，以实现美联储的经济目标，如稳定通货膨胀和促进就业增长。</em></mark></p></details></li></ul><p id="5015231c-47fb-4e27-b7b8-88435e96b4c3" class="">
+</p><h3 id="f4519fae-9f65-458e-976a-fd998e8959eb" class="">美联储点阵图</h3><figure id="45723f69-4ca7-4ed8-a66a-f7317d68a245" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2020.png"><img style="width:384px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2020.png"/></a></figure><p id="e2f5c923-254e-4bfd-9db9-16161e17c2a7" class="">17个点代表了17个委员的预测。longer run只有16个点是因为有一位委员认为自己无法对longer run的利率做出预测</p><h3 id="71b85ae6-07e4-4258-b8bd-b768aa8720ec" class="">沟通策略的关键</h3><figure id="9498b3c2-c2e2-4eee-8614-4b1be35a914f" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2021.png"><img style="width:1802px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2021.png"/></a></figure><ul id="5976aa06-7465-47bc-abe4-23a55a147d87" class="bulleted-list"><li style="list-style-type:disc"><strong>反应函数</strong>：美联储基于什么样的经济数据会做出什么样的反应。市场希望有这样一个简单的算法去理解和预测经济情况</li></ul><ul id="1b4f42fe-24c6-40fb-8938-74f3b15b87be" class="bulleted-list"><li style="list-style-type:disc">风险：美联储现在在考虑什么风险<ul id="74435969-3d97-4c76-9e51-ff57707d0671" class="bulleted-list"><li style="list-style-type:circle">如果风险/不确定性发生了变化，那么市场也就会预期美联储对政策进行调整</li></ul></li></ul><h3 id="5ee865fa-f5bf-4553-9a03-b4395607c3df" class="">沟通的困难</h3><ul id="a28ea5c4-afa9-4cdb-9a54-9e464a7b2930" class="bulleted-list"><li style="list-style-type:disc">时间一致性<ul id="75dfc9f0-1297-4077-880c-54a4cd0c2e29" class="bulleted-list"><li style="list-style-type:circle">美联储会对未来的失业率和通胀进行预测。如果出入比较大的话，市场会产生不信任</li></ul></li></ul><ul id="81e04f25-d368-492c-8b62-e80d405d5961" class="bulleted-list"><li style="list-style-type:disc">近期偏好<ul id="d0c36d8c-7b89-45f9-b9d5-1739a1c03fc9" class="bulleted-list"><li style="list-style-type:circle">市场关心当下的风险。美联储不得不迎合这种短期偏好，照顾市场情绪</li></ul></li></ul><ul id="2364bdd5-0786-4c60-aa7e-62f2c8d3fd26" class="bulleted-list"><li style="list-style-type:disc">预测不确定性<ul id="0fb251d6-0b76-4c05-892b-082433a187a7" class="bulleted-list"><li style="list-style-type:circle">过去四五年美联储的预测都不是很准确</li></ul><ul id="8a95899e-8a3a-47d1-b190-9daeba6ee43c" class="bulleted-list"><li style="list-style-type:circle">市场失去政策信任</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">资产购买</summary><div class="indented"><p id="3ff5c09c-87d5-4fb2-8109-49eb09ac8726" class="">资产购买的本质是：<em><mark class="highlight-pink"><strong>资产互换</strong></mark></em></p><ul id="4b047bdc-3a6b-4b2d-aeda-4cd5624b0df0" class="toggle"><li><details open=""><summary><mark class="highlight-pink">资产互换的第一种情况</mark></summary><figure id="659c8355-6926-4569-9382-59ad0bcfc61f" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2022.png"><img style="width:2346px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2022.png"/></a></figure><p id="22435a36-8588-4573-94f4-c0298a6caa29" class=""><mark class="highlight-pink"><strong>左边是central bank，也就是联储，中间是商业银行。当联储进行资产购买的时候，资产端和负债端同步上升，整体的资产是增加的。但是对于商业银行而言，都是资产端的变化，把证券换成了钱。</strong></mark></p></details></li></ul><ul id="6431eff6-6a91-4a28-9bec-42c7a3a614b6" class="toggle"><li><details open=""><summary><mark class="highlight-pink">资产互换的第二种情况</mark></summary><figure id="9d714cb3-9795-4fff-b443-c8d9c241a8ee" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2023.png"><img style="width:2234px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2023.png"/></a></figure><p id="425bae0b-13ce-4e96-8a48-4ff755d0e69d" class=""><mark class="highlight-pink"><strong>美联储从我们手中购买securities，我们的total asset没有变化，但是对于银行和美联储而言，总体的asset都增加了</strong></mark></p><p id="5a02867f-e484-436f-b5da-8af27c7153ac" class="">由此就可以讲解一下量化宽松（QE）的原理：市场上的国债都被美联储买走了，那么会发生的事情是人们不会傻乎乎把钱存起来，而会去选择更加高风险的投资，由此完成了资产的重新配置，国债被置换成高风险的资产</p></details></li></ul><p id="2186f038-df50-4bde-8506-a1c8093f9bee" class=""><strong>注意：现钞也是美联储负债端的</strong></p><p id="5463054f-c9cb-40b4-b918-8ec6f6854146" class="">当全世界的货币需求上升的时候（<mark class="highlight-gray"><em>注意：一半以上的美钞都在海外流通</em></mark>），美联储就会考虑扩表，也就是同时提升他的资产和负债</p><figure id="efc9d630-49e8-473c-9513-ef2c5d1aa9b7" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2024.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2024.png"/></a></figure></div></details><p id="d417fd89-784c-45ad-b84d-0c2b5f4c5b16" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储的资产负债表</summary><div class="indented"><p id="87dedae0-2f1f-4446-9c15-f0a9160a62c9" class="">理解美联储行为的最简单的方式就是去阅读美联储的资产负债表</p><figure id="c61de188-ff67-470a-a124-61b5d8bfac6b" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2025.png"><img style="width:480px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2025.png"/></a></figure><p id="a7b980e6-98ec-488b-8212-1e1d91f0ef02" class="">美联储资产负债表的<strong>更新频率是：周</strong>，有时间的话每周需要跟进美联储资产负债表的变化</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">资产端</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">核心资产介绍</summary><div class="indented"><figure id="00c16d14-0e74-4c04-bd86-3a101239c6f9" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2026.png"><img style="width:1596px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2026.png"/></a></figure><ul id="62b530e2-7c8d-4bcb-b8df-acbb9425479b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>securities held outright</strong></mark>：美联储持有的证券<ul id="dba04fb5-dad0-477f-ae1a-b4dc59002615" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red"><strong>美国国债</strong></mark>：可以看到最多的是中期和长期国债；还有少数的短期国债</li></ul><ul id="d8625ccc-567a-416d-89b0-09435605b44c" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>federal agency debt securities</strong></mark></summary><p id="3cb724d4-8760-4da7-beca-8efb78877d0b" class="">当涉及到&quot;Federal agency debt securities&quot;（联邦机构债券）时，以下是一些具体的示例，代表了不同领域的联邦机构和它们发行的债券类型：</p><ol type="1" id="6202202f-f6bc-4fac-b548-1e9ddea74b3b" class="numbered-list" start="1"><li><strong>美国政府国民住房抵押协会（Government National Mortgage Association，GNMA 或 Ginnie Mae）：</strong> Ginnie Mae发行抵押支持证券，这些证券背后是由住房贷款支持的资产。这些债券得到联邦政府的担保，通常被视为相对较安全的债券投资。</li></ol><ol type="1" id="1a7176d5-670c-4557-b551-cdc5b7ceacb8" class="numbered-list" start="2"><li><strong>美国国家学生贷款董事会（National Student Loan Program，NSLP）：</strong> NSLP可以发行用于支持大学生助学贷款的债券。这些债券的本金和利息支付由学生贷款还款支持。</li></ol><ol type="1" id="f42e0c66-af25-4d60-9571-f45c2d42e002" class="numbered-list" start="3"><li><strong>美国农业部（United States Department of Agriculture，USDA）：</strong> USDA可以发行农业相关项目的债券，用于支持农民贷款、农村住房和农村基础设施建设。</li></ol><ol type="1" id="b58b0f12-dbce-431c-91fe-426d81238856" class="numbered-list" start="4"><li><strong>联邦家庭住房贷款公司（Federal Home Loan Mortgage Corporation，FHLMC 或 Freddie Mac）和联邦国民住房贷款公司（Federal National Mortgage Association，FNMA 或 Fannie Mae）：</strong> Freddie Mac和Fannie Mae发行的债券用于支持住房市场，它们购买抵押贷款，并将其打包成债券进行出售。</li></ol><ol type="1" id="c7a5b1bc-daea-4bfd-9863-e8248af4ae95" class="numbered-list" start="5"><li><strong>美国出口进口银行（Export-Import Bank of the United States，Ex-Im Bank）：</strong> Ex-Im Bank可以发行用于支持美国出口企业的债券，以促进国际贸易。</li></ol><ol type="1" id="0fcf8d04-9be4-4b68-b650-d8b9957d1b8f" class="numbered-list" start="6"><li><strong>美国能源部（United States Department of Energy）：</strong> 能源部可以发行用于能源项目支持的债券，如清洁能源、核能项目等。</li></ol><ol type="1" id="f409347c-1c7c-4791-b9c4-7cdf5041e7c1" class="numbered-list" start="7"><li><strong>美国国际开发署（United States Agency for International Development，USAID）：</strong> USAID可以发行用于支持国际援助项目的债券，用于支持发展援助、人道主义援助等。</li></ol></details></li></ul><ul id="fd36041c-7aba-47de-9127-4c5f6c190662" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>Mortgage-backed securities(MBS)</strong></mark><mark class="highlight-default">非常大一部分</mark></summary><p id="135b1042-b04b-409c-b234-3d5bd31dceab" class="">&quot;美联储资产端的Mortgage-backed securities&quot;（MBS，抵押支持证券）是一种金融工具，与房地产市场和抵押贷款有关。它是一种被多个房屋抵押贷款支持的债券，投资者可以购买这些债券来获取与这些抵押贷款有关的利息和本金支付。</p><p id="e1ad514d-b458-4533-8059-7f962fb37fef" class="">具体来说，MBS的运作方式如下：</p><ol type="1" id="58f8cdfa-932d-41e0-b65e-8333c87c69e9" class="numbered-list" start="1"><li><strong>抵押贷款池的形成：</strong> 金融机构，如银行或贷款机构，向借款人发放抵押贷款，这些贷款通常用于购买房地产。这些机构将多个抵押贷款汇集成一个抵押贷款池。</li></ol><ol type="1" id="538f6226-63de-49a1-ba04-1e041cd1e28d" class="numbered-list" start="2"><li><strong>打包和证券化：</strong> 抵押贷款池中的贷款被打包成一个整体，然后将其证券化，即转化为可交易的债券，即MBS。每个MBS代表了抵押贷款池中一小部分的权益。</li></ol><ol type="1" id="bc1cda93-7338-4de3-ac86-5239b91b2431" class="numbered-list" start="3"><li><strong>MBS的发行和销售：</strong> 这些MBS由金融机构或政府支持的机构（如Fannie Mae和Freddie Mac）发行和销售给投资者。投资者购买MBS时，实际上是购买了抵押贷款池中一部分贷款的债权。</li></ol><ol type="1" id="d823f672-5589-4b2e-b4b9-eea52f5435e8" class="numbered-list" start="4"><li><strong>收益分配：</strong> 抵押贷款池中的每笔还款和利息支付都会根据其占MBS总量的比例分配给MBS持有人。投资者可以从这些支付中获得固定的利息收入。</li></ol><p id="0c9ed0b6-950f-4955-809b-2cea70a8e372" class="">MBS的引入使投资者能够间接投资于房地产市场，并从抵押贷款支付中获得利益。它也有助于金融机构将抵押贷款风险分散到多个投资者，从而减轻其风险负担。</p><p id="7339e043-318b-4a4a-848b-feb0d30dac7e" class="">在美联储的情况下，资产端的MBS指的是美联储持有的MBS。美联储可能通过购买MBS来实施货币政策，尤其是在经济放缓或危机时。购买MBS可以向金融系统注入流动性，促进房地产市场和贷款市场的流动性，从而支持经济活动。这是一种常见的货币政策工具，被称为量化宽松政策的一部分。</p></details></li></ul></li></ul><ul id="e3d5077c-4f1c-42c7-a308-c791824bbda0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Repurchase agreement</strong></mark><ul id="da99ef4d-3d73-42e0-b5a2-08476caf9a27" class="bulleted-list"><li style="list-style-type:circle">使用在回购中</li></ul><ul id="dbe9c10c-2e0f-4dcb-9c55-4fa2d935401c" class="bulleted-list"><li style="list-style-type:circle">从美联储借贷的时候（有抵押借贷），repurchase agreement会增加，liability中会增加对应的点抵押物</li></ul></li></ul><ul id="def99fe2-ab32-4bcc-99df-07086999a930" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-teal">Loans</mark></strong><ul id="282ffdb6-3467-4cc5-b32b-631de3ac84a5" class="bulleted-list"><li style="list-style-type:circle">贴现窗口</li></ul><ul id="b5717fed-c709-47b8-9fba-845e95f45e92" class="bulleted-list"><li style="list-style-type:circle">美联储通过loans来放款给银行，进而避免银行出现流动性问题</li></ul><ul id="6aa9965c-e1a7-48f7-8bdf-f3a73ff8dbc8" class="bulleted-list"><li style="list-style-type:circle">这一项很少是因为：银行向美联储借钱，会体现在这里，对银行产生“污点效应”。市场会想象你出现规模性危机</li></ul></li></ul><ul id="00210c71-76a5-495e-bf16-54f4703dac75" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Central bank liquidity swaps</strong></mark><ul id="c614c4f9-4a08-4069-8941-9b8925c6d51f" class="bulleted-list"><li style="list-style-type:circle">美联储和其他中央银行做的流动性互换</li></ul><ul id="42782113-5d3c-4fc9-b33c-3416c6f906bd" class="bulleted-list"><li style="list-style-type:circle">只有美元流动性危机的时候，这一项的规模会增大</li></ul></li></ul><ul id="0a2b502b-7025-4556-9de5-7ab8b95ee788" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Gold Stock</strong></mark></li></ul><ul id="279ed191-87dc-4b20-99f8-86165acd2233" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-teal">Special Drawing Rights Certificate Account （SDR）</mark></strong><ul id="50d4b9e4-f1f3-43f7-885f-105bc2e2df2c" class="bulleted-list"><li style="list-style-type:circle">特别提款权（SDR）是国际货币基金组织（IMF）的一种特殊资产，用于促进国际支付和储备</li></ul><ul id="bc1e06a9-e39c-4fee-a376-ab597e9b4f18" class="bulleted-list"><li style="list-style-type:circle">特别提款权是国际货币基金组织发行的一种国际储备资产，它可以在成员国之间进行交换，以帮助调整国际储备的分配。SDR的价值基于一篮子国际货币，包括美元、欧元、人民币、日元和英镑等。SDR的主要目的是增加成员国的国际储备，提供流动性支持，以及促进国际货币体系的稳定。</li></ul><ul id="318e14d0-0668-4616-94f9-4c879b5101ba" class="bulleted-list"><li style="list-style-type:circle">因为在美联储表内规模很小，所以成为不了实际的全球货币</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">美联储的资产结构</summary><div class="indented"><figure id="d6a1adce-b447-4d27-878b-c30709f016ee" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2027.png"><img style="width:2482px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2027.png"/></a></figure><ul id="14705083-3892-482e-86bc-ef8501534dc0" class="bulleted-list"><li style="list-style-type:disc">1945年之前，人们信任纸币是因为美元可以兑换黄金</li></ul><ul id="d5abff2c-f7d2-404e-8776-bdfd5866cccf" class="bulleted-list"><li style="list-style-type:disc">之后美国切换到了法币本位，人们无法再用货币到美联储去兑换黄金</li></ul><ul id="fefdfee5-6728-4416-8e5e-aca63659f8f6" class="bulleted-list"><li style="list-style-type:disc">08年对银行和其他金融机构的信贷非常高</li></ul><ul id="f8d477c2-6bbb-4a24-812a-d5e9b7344df6" class="bulleted-list"><li style="list-style-type:disc"><strong>对英镑国际地位的抢夺</strong><ul id="f40a759c-8017-4a9f-af73-4938fcf130c0" class="bulleted-list"><li style="list-style-type:circle">在1915到1935之间，美联储资产中对非金融私人部门信贷比例非常高</li></ul><ul id="0bf2dc43-0466-4464-93dc-acf928731801" class="bulleted-list"><li style="list-style-type:circle"><strong>美联储为私人提供流动性</strong>：比如货还没有卖出去，但银行已经通过票据兑换成了现金存款给商人</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">人民银行的资产负债表</summary><div class="indented"><figure id="b0aae99d-f77d-417a-9c96-cd28e9c07967" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2028.png"><img style="width:2644px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2028.png"/></a></figure><ul id="e5a616d0-59cb-440b-acc9-ab0b65450edc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>中央政府债券规模不大，说明我们国家的货币发行不是用中国政府的信用来担保</strong></mark></li></ul><ul id="5cd4cc84-b279-4e9b-b80d-cda28ffb75b9" class="bulleted-list"><li style="list-style-type:disc">人民币汇率重要是因为<mark class="highlight-orange"><strong>核心资产的支撑还是外汇资产</strong></mark></li></ul><ul id="597e5cb1-784b-4df6-a5f0-e240c3bec85c" class="bulleted-list"><li style="list-style-type:disc">其他存款性公司债券<ul id="cdead90c-b84d-4da3-82eb-5576f4cdf9a3" class="bulleted-list"><li style="list-style-type:circle"><strong>MLF</strong>：Medium-term Lending Facility，中期借贷便利，<strong>就是中央银行借钱给商业银行，同时商业银行要提供质押物</strong></li></ul><ul id="c44626dc-01f5-4b6b-bfc6-71cb47f2d154" class="bulleted-list"><li style="list-style-type:circle"><strong>SLF</strong>：short-term</li></ul></li></ul><ul id="e1c4f1c1-c5d8-443c-8c67-23f99a0d0fdd" class="bulleted-list"><li style="list-style-type:disc">外汇本位+金融机构本位</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">欧洲央行的资产</summary><div class="indented"><figure id="c1821eba-ce37-4906-91dd-4ad8a28e998d" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2029.png"><img style="width:1160px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2029.png"/></a></figure><ul id="72862e78-f035-4a24-89c5-cb7b45fddc27" class="bulleted-list"><li style="list-style-type:disc"><strong>securities of euro area residents denominated in euro （QE买入）</strong><ul id="62807564-f984-4653-a838-0be872757bb9" class="bulleted-list"><li style="list-style-type:circle">就是欧元区买入的一些债券</li></ul><ul id="286379b7-88d2-4baf-9a5b-311dab4708c5" class="bulleted-list"><li style="list-style-type:circle">主权债+私人债</li></ul></li></ul><ul id="0217b3fd-7be2-45eb-af3a-00c6d889f867" class="bulleted-list"><li style="list-style-type:disc"><strong>lending to euro area credit institutions related to monetary policy operations denominated in euro</strong><ul id="43b0c5e3-42ff-404e-9419-151e40e9a1f5" class="bulleted-list"><li style="list-style-type:circle">LTRO和中国的“麻辣粉”差不多</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">日本央行</summary><div class="indented"><figure id="e165810c-ffd4-4e30-81bd-656f01f9d8d1" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2030.png"><img style="width:576px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2030.png"/></a></figure><p id="6b5097fa-fdea-4243-aa02-5faa1d8b0b7c" class="">国家发行债券占比非常多：<strong>虽然日本高负债，但是高负债的持有人实际是本国的央行</strong></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">如何分析美联储的资产</summary><div class="indented"><ul id="277e213a-ed81-44dd-8e36-e298af29a1de" class="bulleted-list"><li style="list-style-type:disc"><strong>绝对规模+相对规模</strong>（相对于GDP）<ul id="110106b1-41fb-47ef-8d60-5f982e7b8a11" class="bulleted-list"><li style="list-style-type:circle">GDP的增长和美联储的资产负债表扩张需要匹配</li></ul></li></ul><ul id="7f1e5aba-30c6-4d07-a745-d191534d7509" class="bulleted-list"><li style="list-style-type:disc"><strong>资产结构</strong><ul id="ec769abc-3ca7-4ba4-bd2c-0330aa7c7af4" class="bulleted-list"><li style="list-style-type:circle">外汇储备多还是国债多还是其他东西多</li></ul><ul id="ab69b383-f737-4571-a2a4-349b51d08027" class="bulleted-list"><li style="list-style-type:circle">日本央行还买股票：国家队入场</li></ul></li></ul><ul id="b7e272ea-3891-4e11-a9fd-c8dfee4e92e2" class="bulleted-list"><li style="list-style-type:disc"><strong>市场影响</strong><ul id="d1054149-1b60-476e-80ae-f8eedb3bea89" class="bulleted-list"><li style="list-style-type:circle">央行决定了资产定价</li></ul></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">负债端</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">核心负债</summary><div class="indented"><ul id="895026e1-af74-4257-960d-25c4058cb99e" class="bulleted-list"><li style="list-style-type:disc">纸币</li></ul><ul id="8ed3c27f-8dce-446b-9097-f043f5de5328" class="bulleted-list"><li style="list-style-type:disc">银行存款准备金</li></ul><ul id="bfd4ca12-1960-480f-82e4-e85a2a36e036" class="bulleted-list"><li style="list-style-type:disc">与对手方进行的回购操作<ul id="f3c0e4ff-c353-4f8e-8517-f45438dc8746" class="bulleted-list"><li style="list-style-type:circle">在回购中把自己的资产（比如国债）质押给对手方</li></ul></li></ul><ul id="bcdb71be-0510-4d3d-8257-96cc1777e154" class="bulleted-list"><li style="list-style-type:disc">其他<ul id="897215e2-8d02-43c4-a85b-9f22a5d45364" class="bulleted-list"><li style="list-style-type:circle">美国财政部的存款</li></ul></li></ul><p id="d1d7b34a-1623-4c56-8a53-afa3764a9bf9" class="">
+</p><figure id="81b2d156-61df-48c0-b78f-5790241cf8c7" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2031.png"><img style="width:2168px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2031.png"/></a></figure><p id="4adda90a-e0a7-4c8b-9d14-e2303c0b5a73" class="">如上图所示</p><ul id="95eead38-959e-488c-a0b4-b20fc5dfcf00" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Currency in Circulation</strong></mark><ul id="abe2c93f-ee9f-4bcc-af38-e57a1d050585" class="bulleted-list"><li style="list-style-type:circle">就是美联储发行的纸币</li></ul><ul id="2af5c4c7-4faf-4aed-b055-3b6c3c449e17" class="bulleted-list"><li style="list-style-type:circle">美联储发行的纸币以每年百分之六到百分之八的速度在增长</li></ul></li></ul><ul id="4381bf4e-3414-42ea-a7c0-32751a058c57" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Reserve Repurchase Agreements</strong></mark><ul id="2f46bd2c-f5a4-49a6-a884-8698e801587c" class="bulleted-list"><li style="list-style-type:circle"><em><span style="border-bottom:0.05em solid"><strong>Foreign Official and Institutional Accounts</strong></span></em>占据主导地位<ul id="1c33e45c-9adc-4175-ba8d-aa4972876771" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-purple"><em><span style="border-bottom:0.05em solid">比如人民银行有大量外汇储备，美联储可以和人民银行做回购协议。人民银行把钱借给美联储，作为美联储的负债端。而美联储把国债等作为抵押品</span></em></mark></li></ul></li></ul><ul id="c8f0d6ca-1662-4086-850d-aea8ac1053e9" class="bulleted-list"><li style="list-style-type:circle">非银机构也可以用类似的操作把钱借给美联储以此获取利息</li></ul></li></ul><ul id="832f0d58-5d54-418a-ba65-4097f9142d91" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Deposits with F.R Banks, other than reserve balance</strong></mark><ul id="1a60d8cb-433b-4cca-8710-16cecf53cc03" class="bulleted-list"><li style="list-style-type:circle">比如其他银行存在美联储的钱</li></ul><ul id="c566c203-1b20-4256-b52e-75c154f2f471" class="bulleted-list"><li style="list-style-type:circle"><em><span style="border-bottom:0.05em solid"><strong>U.S Treasury General Account (TGA) </strong></span></em>规模很大，是美国财政部存放在美联储的资金</li></ul></li></ul><ul id="574feaef-d739-442c-9df4-41d2035f6559" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Reserve balances with Federal Reserve Banks</strong></mark><ul id="e3f54709-4c00-4a4b-81f2-d98895bae651" class="bulleted-list"><li style="list-style-type:circle">由于缩表的原因，已经缩小了很多，比发行的纸币更少</li></ul><ul id="08289bfd-82fc-460a-899d-bffddccf11b6" class="bulleted-list"><li style="list-style-type:circle">缩表时，银行买回了自己质押在美联储的债券，花的就是准备金账户中的钱。这就是为什么缩表以来流动性降低，就是因为缩表准备金的下降</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">美联储负债结构</summary><div class="indented"><figure id="11cd8760-3ac9-4fe2-896c-670c7911ba5a" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2032.png"><img style="width:2576px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2032.png"/></a></figure><p id="78cb2cd9-c357-48b9-975a-e1c3decbd6ae" class="">之前现钞一直占据着主导的地位，由于金融危机，美联储大量投放准备金，准备金超过了现钞。但现在现钞再一次超越了准备金</p><p id="be8a84a1-e019-4270-b083-e61aa0a0ecf5" class="">
+</p><p id="9741ed6e-f17f-4ed3-99cf-c03b11cfb781" class="">08年之前，一直是现钞和存款对称变化。但08年之后由于金融危机的影响，美联储投放了大量的超额准备金（属于银行准备金存款以外负债）</p><p id="983b5c7d-c8df-49aa-ab88-53f62328e08c" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">人民币负债结构</summary><div class="indented"><figure id="a452c614-c371-4863-99e0-a2dc6477014f" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2033.png"><img style="width:2788px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2033.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">欧洲央行负债结构</summary><div class="indented"><figure id="ab673ed8-8616-40c1-ad41-c1133bef9668" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2034.png"><img style="width:1120px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2034.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">日本央行</summary><div class="indented"><p id="1f69f79f-da24-4ec7-aea4-9e7b05a9a546" class="">也是现钞（bank notes）和银行准备金存款（current deposits）占据了大头</p><figure id="9612472b-ce59-4d02-ba0e-9da64e6643a6" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2035.png"><img style="width:1762px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2035.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">财政部发行国债对美联储的影响</summary><div class="indented"><figure id="ac748a15-9121-4d46-ba48-147e91d602de" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2036.png"><img style="width:1730px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2036.png"/></a></figure><p id="b438e0fa-411e-4c95-963b-0d3f04ecf1be" class="">准备金和国债发行有此消彼长的态势，原因如下：</p><ul id="ad209c18-4216-4408-8d7b-d14910a5d5c3" class="bulleted-list"><li style="list-style-type:disc">财政部发行国债，募集到的资金的来源是银行的客户或者银行自己去认购的。银行如何汇款给财政部呢？美联储的两个存款账户互相汇款</li></ul><ul id="5a5b5f57-8d64-4666-a0d9-88c11e17664b" class="bulleted-list"><li style="list-style-type:disc">从银行提款——准备金下降，财政部发国债募集到的钱——准备金也会下降。双重作用</li></ul><p id="27bb1384-439e-444f-8536-309f3c718390" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">如何分析美联储的负债</summary><div class="indented"><ul id="5a0f8b9a-2bbd-41fc-84a1-ab956a16665f" class="bulleted-list"><li style="list-style-type:disc">先看绝对规模，再看相对规模</li></ul><ul id="5a9fe96e-a259-4ecc-b296-1f932b8f526e" class="bulleted-list"><li style="list-style-type:disc">看负债结构（谁在存钱）</li></ul><ul id="7a30304d-149c-408e-8803-d6090c720b29" class="bulleted-list"><li style="list-style-type:disc">负债对市场流动性的影响——<mark class="highlight-red"><strong>比如美联储的存款利率是百分之一，那么你就不可能在市场上找到利率低于百分之一的借款（利率下限形成）</strong></mark></li></ul></div></details></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储的货币政策传导</summary><div class="indented"><ul id="4d0f187d-5504-4709-8b0f-4518845c64c0" class="bulleted-list"><li style="list-style-type:disc">风险承担（risk taking）</li></ul><ul id="d2c971ec-82ff-4658-ae64-54d871446e80" class="bulleted-list"><li style="list-style-type:disc">银行信贷</li></ul><ul id="7dbd9f65-ea5d-40a1-9613-067673a38a1f" class="bulleted-list"><li style="list-style-type:disc">资产负债表</li></ul><ul id="f367fa5e-c293-4c74-b2b6-cc19f410a59e" class="bulleted-list"><li style="list-style-type:disc">财富效应</li></ul><ul id="2940d689-0bc6-4b62-a547-73fdfbe93d7d" class="bulleted-list"><li style="list-style-type:disc">预期与信号</li></ul><ul id="c7020b10-9728-4485-a023-2ed3dbbaa78e" class="bulleted-list"><li style="list-style-type:disc">组合再平衡（伯南克提出）</li></ul><ul id="04d609c6-5f99-4ca1-835d-f6e1f9490096" class="bulleted-list"><li style="list-style-type:disc">汇率</li></ul><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">信贷渠道与风险承担渠道</summary><div class="indented"><p id="c66f31c8-35cd-424e-96c7-194d7183f51a" class="">这两大传导渠道和<mark class="highlight-teal"><strong>银行</strong></mark>密切相关</p><ul id="4a95c08d-f6c5-4ab3-8fcd-e3d6ca37f344" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>敢贷（让银行愿意承担风险）</strong></mark><ul id="7e820236-71c3-45f0-9e6b-ac7b4f99969d" class="bulleted-list"><li style="list-style-type:circle">降低银行融资成本（利率）</li></ul><ul id="70f66aab-6fe6-49bb-86f6-3552c095e77b" class="bulleted-list"><li style="list-style-type:circle">放松监管指标</li></ul></li></ul><ul id="46d0aa75-ebe3-4790-ae34-34edbac955b5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>愿贷</strong></mark><ul id="b202eb6e-8d66-4972-8f01-6cedfee839b4" class="bulleted-list"><li style="list-style-type:circle">往往不受银行单方面控制（还受到市场的影响，比如中国很多人不愿意通过信用贷款，更愿意通过储蓄去消费）</li></ul><ul id="5a3f7064-03de-437f-9ab4-f6e74c44ca68" class="bulleted-list"><li style="list-style-type:circle">所以信贷需求不受到这方面货币政策的控制</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">资产负债表渠道</summary><div class="indented"><ul id="3ccf4609-8951-4abb-acc9-b9168fcf2339" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>资产价格上升</strong></mark><ul id="46d04158-893c-4901-a445-29bbdb1d9a78" class="bulleted-list"><li style="list-style-type:circle">比如中央银行实时量化宽松政策，到市场上去购买债券，导致全市场的资产价格上升</li></ul><ul id="eea3bb75-f639-4d9c-b193-6ccda9cb6d92" class="bulleted-list"><li style="list-style-type:circle">eg. 日本政府甚至购买股票的EFT</li></ul></li></ul><ul id="8c56cc87-fb8a-48be-8d80-a7992b038977" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>降低利率</strong></mark><ul id="ff698318-9414-4677-84d3-c9752fda71e3" class="bulleted-list"><li style="list-style-type:circle">负债成本降低</li></ul><ul id="99b0947d-d7d5-411e-a15e-a021fd0f56c6" class="bulleted-list"><li style="list-style-type:circle">鼓励融资</li></ul><ul id="8789a557-50cf-4637-9942-3c4a480f2e51" class="bulleted-list"><li style="list-style-type:circle">eg. 08年金融危机银行资产端由于房地产贬值受到重创，负债端由于美联储不断加息，导致融资成本越来越贵</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">财富效应</summary><div class="indented"><p id="ce6c27a1-fbde-4164-8da0-4d28da36b345" class="">财富效应就是私人部门的财富增长对总体经济增长是有益的</p><figure id="8e4a7ae7-ad49-4aed-ac10-ede2894f469e" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2037.png"><img style="width:480px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2037.png"/></a></figure><p id="24949701-e02f-4f7e-8e3d-817181536e5d" class="">右图是美国中产阶级的财富，经历了12年也只是回到了危机之前的水平</p><ul id="3e5b9192-ecb9-45e2-8651-5ce005d30716" class="bulleted-list"><li style="list-style-type:disc">美国贫富差距大，股票房地产和商业资产更针对富裕阶级。但是对于中产阶级而言，资产端资产不多，负债端的负债很多（比如学生贷，汽车贷）等</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">预期与信号渠道</summary><div class="indented"><figure id="4a1945ee-d23d-4bf8-9fba-b9fdbfbc64eb" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2038.png"><img style="width:384px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2038.png"/></a></figure><p id="8a7afb11-026b-48be-acfd-9cc0d84e77db" class="">通过前瞻指引政策来改变市场预期。可以看一下粉色的措辞，就是美联储对市场放出的信号</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">组合再平衡渠道</summary><div class="indented"><ol type="1" id="31dbc9f8-40ab-469d-a0e7-fecf54063519" class="numbered-list" start="1"><li>中央银行创造资产的稀缺性，拉高资产相对估值（比如QE国债）</li></ol><ol type="1" id="ae763f8a-51be-4ba7-9429-8065d9cb3e07" class="numbered-list" start="2"><li>投资者退而求其次，重新配置资金到其他类型</li></ol><ol type="1" id="d3b34bf4-154a-440c-b115-9791c5b20a37" class="numbered-list" start="3"><li>资金一层一层蚕食各类资产的收益<figure id="31125601-eb34-425d-8a5c-9a2365f1720b" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2039.png"><img style="width:480px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2039.png"/></a></figure></li></ol><p id="ef0eb04c-ce40-4ff6-9ce0-6ecdbc2a6680" class=""><mark class="highlight-yellow"><em>当市场的流动性紧缩的时候，资金又会从高风险回流到低风险</em></mark></p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">汇率渠道</summary><div class="indented"><ol type="1" id="6b0d9829-9c60-436c-a96c-fe6a01706c7c" class="numbered-list" start="1"><li>贬值刺激出口</li></ol><ol type="1" id="e5994055-a43d-40f9-b915-12bafed6d476" class="numbered-list" start="2"><li>美元变得便宜，新兴市场受益<ol type="a" id="adbd85da-e54b-4eeb-ab5b-e9392553670d" class="numbered-list" start="1"><li>因为美元是很多企业的记债货币。一旦美元汇率贬值，对于负债端有很多美元债的国家这是非常好的信号</li></ol><ol type="a" id="51d9b643-cb17-46e7-a411-c1f97a485fad" class="numbered-list" start="2"><li>一旦美元贬值，新兴市场走强高度相关</li></ol></li></ol></div></details><figure id="fcf1acd7-6c5c-41cb-878f-3f13b5ee5a43" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2040.png"><img style="width:1471px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2040.png"/></a></figure><figure id="6db7160e-a07a-448c-9ea2-11fa1d8c1b14" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2041.png"><img style="width:1471px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2041.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储的数据与研究来源</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">政策相关资料</summary><div class="indented"><ul id="590d2a23-1e68-456a-b07e-dd52ccc9e9e5" class="bulleted-list"><li style="list-style-type:disc">FOMC会议材料<ul id="7968bcc2-ddd0-462e-a96f-e7c0f944301a" class="bulleted-list"><li style="list-style-type:circle">下面的link是FOMC的页面<figure id="b5830bb9-108c-4cc0-afaf-41c34cdd6cde"><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Meeting calendars and information</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure><figure id="4550e890-7e09-4212-873d-39b5c3350b78" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2042.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2042.png"/></a></figure></li></ul></li></ul><ul id="ef026a73-84fb-4e9b-a7de-f50a7f142116" class="bulleted-list"><li style="list-style-type:disc">延时五年公布的其他材料<ul id="d0cc84a8-2667-4a6c-aa8d-4ae30f6b29b7" class="bulleted-list"><li style="list-style-type:circle">数据可以用于观测美联储关注的经济指标</li></ul></li></ul><ul id="a30cf5cc-1c2e-461a-9e57-fdf1ffb8c4f9" class="bulleted-list"><li style="list-style-type:disc">纽联储的公开市场操作信息<ul id="e8cc2388-14d7-407e-ae67-eaf06350004b" class="bulleted-list"><li style="list-style-type:circle">纽联储是第二重要的联储的分行</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">官员演讲与听证会内容</summary><div class="indented"><ul id="6fec8c08-1df4-4691-9ad1-9653d7fefb9e" class="bulleted-list"><li style="list-style-type:disc">理事演讲与听证会材料<figure id="31a75ec7-ba63-40bf-9cb0-9d7ed9039914"><a href="https://www.federalreserve.gov/newsevents/speeches.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Speeches</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/newsevents/speeches.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure></li></ul><ul id="ae220568-fc00-45cf-8165-627b7e03151a" class="bulleted-list"><li style="list-style-type:disc">各个联储分行行长的演讲</li></ul><ul id="a415af3d-6852-440d-87e0-48caa18cdea6" class="bulleted-list"><li style="list-style-type:disc">其他公开材料<ul id="d934bb33-91b1-4b3d-b703-5e186c5e4f52" class="bulleted-list"><li style="list-style-type:circle">随时随地关心媒体</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">研究文献与博客</summary><div class="indented"><p id="5662bb04-55e6-4852-aba0-78d6be2404c0" class="">（如果对学术研究比较感兴趣）</p><ul id="a2b52db1-15b3-4a18-b32c-221715879e14" class="bulleted-list"><li style="list-style-type:disc">美联储与分行的博客文章</li></ul><ul id="2d45511f-3b9a-41ae-b713-2aad78ef3823" class="bulleted-list"><li style="list-style-type:disc">工作论文</li></ul><figure id="bdc63700-3246-4d4b-b50c-88ceac40745d"><a href="https://www.federalreserve.gov/econres.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Economic Research</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/econres.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure><p id="a5436291-16ae-4402-bd8a-448098baf265" class="">注意：Fed Notes类似于博客，关于就业通胀等等都有单独的博客讨论</p><p id="b8bb0fc3-9686-417e-9cc7-de354372f0ef" class="">纽联储有自由街博客，博客中对于专业名词有非常专业的解读</p><figure id="64de80e9-ec9e-4988-853c-0126c9ec518f"><a href="https://libertystreeteconomics.newyorkfed.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Liberty Street Economics</div><div class="bookmark-description">Insight and analysis from the New York Fed&#x27;s economists</div></div><div class="bookmark-href"><img src="https://libertystreeteconomics.newyorkfed.org/favicon.ico" class="icon bookmark-icon"/>https://libertystreeteconomics.newyorkfed.org/</div></div><img src="https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2022/12/LSE_2022_og-image_1207.jpg" class="bookmark-image"/></a></figure><p id="bc986839-848c-4079-8dc1-474f268b7415" class="">Fed Print有所有美联储的研究报告，可以订阅：</p><figure id="03667ec2-c099-4caf-bd4d-a40c1f9be987"><a href="https://fedinprint.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fed in Print</div><div class="bookmark-description">View more items</div></div><div class="bookmark-href">https://fedinprint.org/</div></div></a></figure><p id="16a621e7-ce05-49aa-b625-0d561b07796b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">经济数据</summary><div class="indented"><ul id="84851d30-7716-4aa7-b067-f21821579add" class="bulleted-list"><li style="list-style-type:disc">Fed数据库</li></ul><figure id="b4daa0ff-c72d-4197-aa41-a792a542e438"><a href="https://www.federalreserve.gov/data.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Data</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/data.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure><figure id="d49b24c5-5c39-4cb0-838c-f40048bce378" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2043.png"><img style="width:2488px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2043.png"/></a></figure><p id="1a29d1da-fad9-45c7-b968-781980960373" class="">比较重要的是上图的H.4.1；还有financial report中的Z.1</p><ul id="5b103cfd-708f-4152-87cd-aa0d5480803a" class="bulleted-list"><li style="list-style-type:disc">美联储的数据报告</li></ul><ul id="0879e6cb-1180-40fa-9cbf-07995b595360" class="bulleted-list"><li style="list-style-type:disc">纽联储提供的数据（应用性非常好）</li></ul><p id="d088d3f6-f26b-4678-b125-713f1f411632" class="">下面的链接是纽联储的data and stastics page</p><figure id="716f43ae-7fc6-479a-93bf-bcc506b3dd8e"><a href="https://www.newyorkfed.org/data-and-statistics" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Data and Statistics Page - FEDERAL RESERVE BANK of NEW YORK</div></div><div class="bookmark-href"><img src="https://www.newyorkfed.org/medialibrary/media/favicon.ico" class="icon bookmark-icon"/>https://www.newyorkfed.org/data-and-statistics</div></div></a></figure><p id="3786d1fe-1153-4e24-8e62-676ee3476426" class="">下面的link就是纽联储的U.S. Economy in a Snapshot，有很多应用性极佳的数据</p><figure id="cfa21e1f-cfcd-4016-ae99-d6eee64d18d6"><a href="https://www.newyorkfed.org/research/snapshot" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">U.S. Economy in a Snapshot</div><div class="bookmark-description">A monthly chartpack summarizing factors affecting the U.S. economy.</div></div><div class="bookmark-href"><img src="https://www.newyorkfed.org/medialibrary/media/favicon.ico" class="icon bookmark-icon"/>https://www.newyorkfed.org/research/snapshot</div></div><img src="https://www.newyorkfed.org/medialibrary/media/research/snapshot/2015_economic-snapshot-june-620_art" class="bookmark-image"/></a></figure><ul id="f1a90f3d-1951-47a2-9e14-03ab06b30c19" class="bulleted-list"><li style="list-style-type:disc">Fred数据库（非常全面而且还可以画图）</li></ul><figure id="de5dc2b7-3e1e-49e9-af89-fff9ad2ecaee"><a href="https://fred.stlouisfed.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Federal Reserve Economic Data | FRED | St. Louis Fed</div><div class="bookmark-description">Download, graph, and track 822,000 economic time series from 114 sources.</div></div><div class="bookmark-href"><img src="https://fred.stlouisfed.org/favicon.ico" class="icon bookmark-icon"/>https://fred.stlouisfed.org/</div></div></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">美联储的理事</summary><div class="indented"><ul id="b1cf61a4-46e1-453d-af6b-f555789f79ef" class="bulleted-list"><li style="list-style-type:disc">FED History</li></ul><figure id="24c2ce33-ad93-493b-baa5-e4a03140bcdf"><a href="https://www.federalreservehistory.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home</div><div class="bookmark-description">Explore the Federal Reserve&#x27;s history</div></div><div class="bookmark-href">https://www.federalreservehistory.org/</div></div></a></figure><ul id="c60ae0aa-952a-4cb1-bdd5-65596c5a2948" class="bulleted-list"><li style="list-style-type:disc">FRASER数据库</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">隐藏材料</summary><div class="indented"><h3 id="4987f32e-6fd0-40e5-babb-f364db263774" class="">顾问小组会议材料</h3><p id="cc56b7f5-421c-4ff7-87fc-095519e967d0" class="">在纽联储的advisory groups下面可以看见各个顾问小组，点击可以查看他们的会议材料</p><figure id="fa2699f7-b4b9-48e0-9922-27e65705bd56"><a href="https://www.newyorkfed.org/aboutthefed/external_committees" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Advisory Groups - FEDERAL RESERVE BANK of NEW YORK</div></div><div class="bookmark-href"><img src="https://www.newyorkfed.org/medialibrary/media/favicon.ico" class="icon bookmark-icon"/>https://www.newyorkfed.org/aboutthefed/external_committees</div></div></a></figure><p id="a6cc731f-61f3-44ce-aa87-dc2cb7e616fc" class="">比如Financial Advisory Roundtable的会议材料在：</p><figure id="48cd09b5-30dd-474b-a78b-5182e69134bd"><a href="https://www.newyorkfed.org/aboutthefed/far.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Financial Advisory Roundtable - FEDERAL RESERVE BANK of NEW YORK</div><div class="bookmark-description">Viral Acharya 
+                                New York University</div></div><div class="bookmark-href"><img src="https://www.newyorkfed.org/medialibrary/media/favicon.ico" class="icon bookmark-icon"/>https://www.newyorkfed.org/aboutthefed/far.html</div></div></a></figure><p id="a84596ed-3d29-4bfa-809d-0c48024be6c6" class="">有很多大佬参会，讲一些当前市场关注的话题</p><h3 id="0172eea5-7dd9-4dba-8952-faa2f8488371" class="">公开市场操作报告（年度）</h3><figure id="d0f6dd5d-feed-4fd9-92ee-e9bd706744ac"><a href="https://www.federalreserve.gov/publications/annual-report.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Annual Report</div><div class="bookmark-description">The Federal Reserve Board of Governors in Washington DC.</div></div><div class="bookmark-href"><img src="https://www.federalreserve.gov/favicon.ico" class="icon bookmark-icon"/>https://www.federalreserve.gov/publications/annual-report.htm</div></div><img src="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" class="bookmark-image"/></a></figure><p id="c18eda45-c8e1-477b-9053-740e2d78cf6c" class="">Mikko推荐阅读</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">美联储议息会议</summary><div class="indented"><ul id="096b59e7-4667-43a9-a85e-1bcddf56d50e" class="bulleted-list"><li style="list-style-type:disc">声明</li></ul><ul id="4b9c67b4-8292-4fef-a9fa-b4aa6b1475e4" class="bulleted-list"><li style="list-style-type:disc">经济预测</li></ul><ul id="d4f67cf6-4dc0-46b5-b422-8577352db7dc" class="bulleted-list"><li style="list-style-type:disc">发布</li></ul><ul id="fa0808f0-b839-441f-ac97-e3d17af9a365" class="bulleted-list"><li style="list-style-type:disc">会议纪要</li></ul><figure id="43aec65e-6d6b-45fe-bbc8-3f629435b6a0" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2044.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2044.png"/></a></figure><p id="89586098-8743-4b63-aa43-2ed4a79773cb" class="">注：</p><ul id="f105ac35-2e67-400b-98ac-5b5433bf80bb" class="bulleted-list"><li style="list-style-type:disc">Projection Materials（经济预测）只有在季末的时候才会有</li></ul><p id="dbff7c27-982f-4c21-8142-f632f2fa177f" class="">
+</p><figure id="cb25d2c6-e6fc-4f16-9ebd-10f6a17a94a8" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2045.png"><img style="width:2556px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2045.png"/></a></figure><p id="fcf06cc8-8ca2-4d16-8445-1979aa2c3c86" class="">需要比较两次statement的措辞，通过这些表态，确认美联储对通胀的态度</p><p id="93939096-1d4d-48d8-8fce-08f84fd3e06e" class="">
+</p><h2 id="5a15873a-d9da-46ba-9975-fde94f45acf4" class="">经济预测</h2><figure id="ea913d8f-dd74-4300-a392-5991ce408921" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2046.png"><img style="width:1843px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2046.png"/></a></figure><p id="5fa90e84-ce42-444d-a567-ec75bd2180d0" class="">上面一行是六月预测，下面是三月的。</p><p id="4f7c1645-bcc1-4197-a851-fc55f36968dc" class="">下图是一些市场参与者的预测，如果和美联储的预测差异过大，那么需要注意市场反应</p><figure id="47d8fc95-a548-449c-bdcf-21a34bd506fb" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2047.png"><img style="width:432px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2047.png"/></a></figure><h3 id="571a4ba4-cd54-401d-8c67-bcd159cb5a07" class="">点阵图</h3><figure id="853b5d6a-b8f5-47f4-9c00-a72dbc4da50b" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2048.png"><img style="width:2677px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2048.png"/></a></figure><p id="70ed13d8-64f3-410d-8be5-f798433a9011" class="">离散程度可以看出FOMC分歧情况，如果分歧过大，代表美联储的政策可能波动性强，对市场不是好消息</p><p id="d5018111-59ec-4c26-b48d-5a1d0d700409" class="">
+</p><h2 id="59b09dfd-58ac-452b-9a85-b37f228e0c5e" class="">发布会</h2><ul id="eb9414ce-3a4c-4862-99b5-12335d7eff42" class="bulleted-list"><li style="list-style-type:disc">有关其他经济体的看法</li></ul><ul id="3d2fcdd3-a799-4bce-bade-d11c436aab85" class="bulleted-list"><li style="list-style-type:disc">最关注的问题聚焦在哪</li></ul><ul id="844c06d7-1a8d-4700-b16d-8e9e83c8d885" class="bulleted-list"><li style="list-style-type:disc">与上一次发布会的态度比较</li></ul><p id="af1640c2-4d25-497f-a734-e0dd530ee08b" class="">
+</p><p id="c79c5c35-e5e4-45d2-a6c2-6998afc77580" class="">eg. </p><figure id="fd1e71c6-b832-44c4-a9bf-ac1802d55b2e" class="image"><a href="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2049.png"><img style="width:528px" src="%E7%BE%8E%E8%81%94%E5%82%A8%20a91f9be0baa04ca6949d90d3afdb781e/Untitled%2049.png"/></a></figure><p id="d8e0a666-f9a0-4256-b297-bec98baeb4c1" class="">
+</p></div></details></div></article></body></html>
